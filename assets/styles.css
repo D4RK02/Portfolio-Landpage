@@ -109,12 +109,14 @@ h2 {
 }
 
 /* Navegação Mobile (escondida por padrão) */
+/* styles.css */
+/* Garante que o menu flutue corretamente no mobile */
 .desktop-nav {
     display: none; 
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 60px; /* Abaixo do cabeçalho */
+    top: 65px; /* Ajuste para caber abaixo do header */
     left: 0;
     background-color: white;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
