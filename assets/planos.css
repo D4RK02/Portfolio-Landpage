@@ -92,16 +92,22 @@
 }
 
 /* Lista de Recursos (Centraliza, mas mantém o texto à esquerda) */
+/* planos.css */
+
+/* Garante que a lista de recursos tenha espaçamento lateral dentro do card */
 .features-list {
     list-style: none;
-    text-align: left; /* Mantém os checks alinhados à esquerda dentro do card */
+    text-align: left;
     margin: 25px 0 30px;
-    padding: 0;
-    display: inline-block; /* Faz a lista centralizar no card */
+    padding: 0 10px; /* Adiciona um padding interno de 10px na lista */
+    display: inline-block;
+    /* Limita a largura da lista para o texto não encostar nas bordas do card */
+    max-width: 90%; 
 }
 
+/* Aumenta o padding vertical dos itens da lista */
 .features-list li {
-    padding: 8px 0;
+    padding: 12px 0; 
     border-bottom: 1px dashed #eee;
     color: #444;
 }
