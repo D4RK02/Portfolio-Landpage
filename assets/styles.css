@@ -52,10 +52,26 @@ body {
 /* ========================================================== */
 
 /* Estilos de Conteúdo */
+/* styles.css */
+/* Ajuste o padding do header */
+.main-header {
+    /* Aumenta o padding lateral para 10% */
+    padding: 15px 10%; 
+}
+
+/* Ajuste a largura do main (conteúdo principal) */
 main, footer {
-    width: 90%;
-    max-width: 1200px; /* Limite o conteúdo para não ficar muito largo no desktop */
+    /* Reduz a largura para 95% para dar mais respiro nas bordas do celular */
+    width: 95%; 
+    max-width: 1200px; 
     margin: 0 auto;
+}
+
+/* Aumentar o espaçamento vertical entre as seções */
+section {
+    /* Aumenta de 50px para 70px */
+    padding: 70px 0; 
+    text-align: center;
 }
 
 /* Seções Padrão */
