@@ -1,0 +1,314 @@
+/* assets/styles.css - Mobile-First e Performance Otimizada */
+
+/* ========================================================== */
+/* 0. RESET E VARIÁVEIS (BASE) */
+/* ========================================================== */
+
+:root {
+    /* Paleta de Cores (Definir 3 cores principais) */
+    --primary-color: #007bff; /* Azul (Ação/Confiança) */
+    --secondary-color: #333; /* Texto Principal */
+    --background-light: #f9f9f9; /* Fundo Claro */
+    
+    /* Tipografia (Usando Poppins do Google Fonts) */
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* Reset Básico (Melhor para Performance) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--secondary-color);
+    background-color: var(--background-light);
+    /* Previne rolagem horizontal (importante para mobile) */
+    overflow-x: hidden; 
+}
+
+/* Classes utilitárias para CTAs */
+.primary-cta {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    /* Efeito sutil de transição para o hover */
+    transition: background-color 0.3s ease;
+}
+
+.primary-cta:hover {
+    background-color: #0056b3 !important; 
+}
+
+
+/* ========================================================== */
+/* 1. LAYOUT MOBILE (PADRÃO PARA TODA TELA < 768px) */
+/* ========================================================== */
+
+/* Estilos de Conteúdo */
+main, footer {
+    width: 90%;
+    max-width: 1200px; /* Limite o conteúdo para não ficar muito largo no desktop */
+    margin: 0 auto;
+}
+
+/* Seções Padrão */
+section {
+    padding: 50px 0; /* Espaçamento vertical padrão no mobile */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em; /* Tamanho de fonte no mobile */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Cabeçalho */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo span {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+/* Navegação Mobile (escondida por padrão) */
+.desktop-nav {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Abaixo do cabeçalho */
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.desktop-nav.active {
+    display: flex; /* Mostrado via JavaScript no mobile */
+}
+
+.desktop-nav a {
+    padding: 15px 5%;
+    text-decoration: none;
+    color: var(--secondary-color);
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: var(--secondary-color);
+}
+
+
+/* Seção Hero */
+.hero-section {
+    padding: 80px 5% 40px;
+}
+
+.subheadline {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* Grid de Features (Mobile: uma coluna) */
+.features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.feature-item {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.feature-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* ========================================================== */
+/* 2. ESTILOS DA SEÇÃO PORTFÓLIO */
+/* ========================================================== */
+
+.portfolio-section {
+    background-color: white;
+    padding: 60px 0;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 coluna */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.portfolio-item {
+    text-align: left;
+    padding: 25px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px); /* Efeito sutil para indicar interação */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.secondary-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.tag-performance {
+    display: inline-block;
+    background-color: var(--background-light);
+    color: #555;
+    font-size: 0.8em;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+
+/* RESPONSIVIDADE (Desktop/Tablet) */
+@media (min-width: 768px) {
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
+    }
+
+}
+
+/* Formulário de Contato */
+#lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#lead-form input,
+#lead-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Rodapé */
+.main-footer {
+    padding: 20px 5%;
+    background-color: var(--secondary-color);
+    color: #ccc;
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.main-footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+
+/* ========================================================== */
+/* 3. RESPONSIVIDADE - DESKTOP/TABLET (PRIMEIRA MEDIA QUERY) */
+/* ========================================================== */
+
+@media (min-width: 768px) {
+    
+    /* Oculta o botão mobile e mostra o menu desktop */
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .desktop-nav {
+        display: flex;
+        flex-direction: row; /* Volta a ser horizontal */
+        position: static; /* Volta para o fluxo normal */
+        width: auto;
+        box-shadow: none;
+        align-items: center;
+    }
+    
+    .desktop-nav a {
+        padding: 0;
+        border-bottom: none;
+        margin-left: 20px;
+    }
+
+    /* Tamanhos de Fonte Maiores */
+    h1 {
+        font-size: 3em;
+    }
+
+    /* Grid de Features (Desktop: duas ou mais colunas) */
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas padrão no desktop */
+        gap: 25px;
+    }
+    
+    /* Centraliza o formulário e permite mais espaço */
+    #lead-form {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permite que os campos quebrem para o desktop */
+        max-width: 800px;
+    }
+    
+    #lead-form input,
+    #lead-form select {
+        flex: 1 1 48%; /* Ocupa metade da linha */
+    }
+    
+    #lead-form button {
+        flex: 1 1 100%; /* Ocupa a linha inteira */
+    }
+}
