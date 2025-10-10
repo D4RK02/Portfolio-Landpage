@@ -1,6 +1,12 @@
-/* assets/planos.css - Estilos específicos para a página de planos */
+/* assets/planos.css - Estilos específicos para a página de planos (Cards e Estética) */
 
-/* Layout Principal */
+/* ========================================================== */
+/* 1. LAYOUT BASE E HEADER */
+/* ========================================================== */
+
+/* Nota: Variáveis de cor e fonte estão definidas em styles.css */
+/* O cabeçalho main-header e o main-footer herdam de styles.css */
+
 .plans-container {
     padding: 30px 0;
 }
@@ -19,26 +25,13 @@
     color: #777;
 }
 
-/* Tabela de Planos (Grid) */
-.pricing-table {
-    margin-bottom: 60px;
-}
-
-.plans-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 coluna */
-    gap: 30px;
-    padding: 20px 0;
-}
-
 /* ========================================================== */
-/* 3. ESTILOS DA SEÇÃO DE PLANOS (Ajustado para Cards) */
+/* 2. TABELA DE PLANOS (CARDS) */
 /* ========================================================== */
 
-/* Tabela de Planos (Grid) */
 .pricing-table {
     margin-bottom: 60px;
-    text-align: center; /* Centraliza o cabeçalho H2 */
+    text-align: center; 
 }
 
 /* Container do Grid de Planos */
@@ -47,8 +40,8 @@
     grid-template-columns: 1fr; /* Mobile: 1 coluna por padrão */
     gap: 30px;
     padding: 20px 0;
-    margin: 0 auto; /* Centraliza o grid */
-    max-width: 1000px; /* Limita a largura máxima do grid principal */
+    margin: 0 auto; 
+    max-width: 1000px; 
 }
 
 /* Card Individual do Plano (O "Quadrado") */
@@ -59,95 +52,40 @@
     border: 1px solid #ddd;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center; /* Centraliza todo o conteúdo dentro do card */
+    text-align: center;
+    /* Garante que o card tenha altura suficiente para alinhar no grid */
+    min-height: 450px; 
 }
 
 .plan-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Destaque para o plano mais vendido (Ouro) */
 .featured-plan {
-    /* Destacando o Plano Ouro */
     border: 3px solid var(--primary-color);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     position: relative;
     overflow: hidden;
+    /* Destaque sutil vertical no desktop sem quebrar o grid */
+    margin-top: -15px; 
+    margin-bottom: -15px; 
 }
 
-/* Banner "Mais Popular" (Opcional: Adicionar no HTML para o Ouro) */
+/* Banner "Mais Popular" (Faixa Amarela) */
 .featured-plan::before {
     content: "MAIS POPULAR";
     position: absolute;
     top: 15px;
     right: -30px;
-    background-color: #ffc107; /* Amarelo de destaque */
+    background-color: #ffc107; 
     color: #333;
     padding: 5px 30px;
     font-size: 0.8em;
     font-weight: 700;
-    /* Rotaciona para aparecer como uma faixa no canto */
     transform: rotate(45deg); 
-}
-
-/* Lista de Recursos (Centraliza, mas mantém o texto à esquerda) */
-/* planos.css */
-
-/* Garante que a lista de recursos tenha espaçamento lateral dentro do card */
-.features-list {
-    list-style: none;
-    text-align: left;
-    margin: 25px 0 30px;
-    padding: 0 10px; /* Adiciona um padding interno de 10px na lista */
-    display: inline-block;
-    /* Limita a largura da lista para o texto não encostar nas bordas do card */
-    max-width: 90%; 
-}
-
-/* Aumenta o padding vertical dos itens da lista */
-.features-list li {
-    padding: 12px 0; 
-    border-bottom: 1px dashed #eee;
-    color: #444;
-}
-
-/* Preços */
-.setup-price {
-    /* Mantém o estilo de preço alto */
-    font-size: 2.2em; 
-}
-
-/* Botão de CTA no Plano */
-.cta-plan-btn {
-    margin-top: 20px;
-    display: block;
-    width: 100%;
-}
-
-
-/* ========================================================== */
-/* 4. AJUSTES PARA MOBILE E DESKTOP */
-/* ========================================================== */
-
-@media (min-width: 768px) {
-    
-    /* DESKTOP: 3 Colunas para Sites */
-    .plans-grid {
-        grid-template-columns: repeat(3, 1fr); 
-    }
-
-    /* DESKTOP: 2 Colunas para Bots */
-    .secondary-pricing .plans-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 650px;
-    }
-}
-
-/* Destaque para o plano mais vendido (Ouro) */
-.featured-plan {
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    z-index: 5;
 }
 
 .plan-card h3 {
@@ -158,7 +96,7 @@
 
 /* Preços */
 .setup-price {
-    font-size: 1.8em;
+    font-size: 2.2em; 
     font-weight: 700;
     color: var(--secondary-color);
     margin-bottom: 5px;
@@ -173,12 +111,15 @@
 /* Lista de Recursos */
 .features-list {
     list-style: none;
-    text-align: left;
-    margin-bottom: 30px;
+    text-align: left; 
+    margin: 25px 0 30px;
+    padding: 0 10px; /* Adiciona padding interno */
+    display: inline-block; 
+    max-width: 90%; /* Limita a largura da lista para não encostar nas bordas do card */
 }
 
 .features-list li {
-    padding: 10px 0;
+    padding: 12px 0; 
     border-bottom: 1px dashed #eee;
     color: #444;
 }
@@ -198,23 +139,32 @@
     transition: all 0.3s ease;
 }
 
+/* Estilo para o botão do Plano Ouro (destaque) */
+.featured-plan .primary-cta {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-color: var(--primary-color);
+}
+
 .cta-plan-btn:hover {
     background-color: var(--primary-color);
     color: white;
 }
 
-/* Estilos para planos secundários (Modalidade B) */
+
+/* Estilos para planos secundários (Modalidade B - Chatbots Avulsos) */
 .secondary-pricing .plans-grid {
     gap: 20px;
-    /* Faz os cards menores para a seção B */
-    grid-template-columns: 1fr; 
+    min-height: auto; /* Permite que o card se ajuste */
 }
 .secondary-pricing .plan-card {
     padding: 20px;
+    min-height: auto;
 }
 
+
 /* ========================================================== */
-/* RESPONSIVIDADE (DESKTOP) */
+/* 3. RESPONSIVIDADE (DESKTOP) */
 /* ========================================================== */
 
 @media (min-width: 768px) {
@@ -223,12 +173,14 @@
         font-size: 2.5em;
     }
     
+    /* DESKTOP: 3 Colunas para Sites */
     .plans-grid {
-        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
+        grid-template-columns: repeat(3, 1fr); 
     }
 
+    /* DESKTOP: 2 Colunas para Bots */
     .secondary-pricing .plans-grid {
-        grid-template-columns: repeat(2, 1fr); /* Desktop: 2 colunas para Bot */
+        grid-template-columns: repeat(2, 1fr);
         max-width: 650px;
         margin: 0 auto;
     }
