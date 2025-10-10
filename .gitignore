@@ -1,0 +1,18 @@
+# ===============================================
+# ARQUIVOS DE SISTEMA E AMBIENTE
+# ===============================================
+.DS_Store             # Arquivos gerados pelo macOS
+Thumbs.db             # Arquivos gerados pelo Windows
+
+# ===============================================
+# ARQUIVOS DO VISUAL STUDIO CODE (VS CODE)
+# ===============================================
+.vscode/              # Ignora a pasta de configurações locais do VS Code
+.local/               # Arquivos locais de extensão (se existirem)
+
+# ===============================================
+# ARQUIVOS DE BACKUP E TEMPORÁRIOS
+# ===============================================
+*~                    # Arquivos de backup do Linux/Vim
+*.bak                 # Arquivos de backup genéricos
+*.log                 # Arquivos de log (se você adicionar um backend futuro)
