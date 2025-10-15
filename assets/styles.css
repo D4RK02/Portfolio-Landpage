@@ -1,332 +1,250 @@
-/* assets/styles.css - Mobile-First e Performance Otimizada */
-
-/* ========================================================== */
-/* 0. RESET E VARIÁVEIS (BASE) */
-/* ========================================================== */
-
-:root {
-    /* Paleta de Cores (Definir 3 cores principais) */
-    --primary-color: #007bff; /* Azul (Ação/Confiança) */
-    --secondary-color: #333; /* Texto Principal */
-    --background-light: #f9f9f9; /* Fundo Claro */
-    
-    /* Tipografia (Usando Poppins do Google Fonts) */
-    --font-family: 'Poppins', sans-serif;
-}
-
-/* Reset Básico (Melhor para Performance) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ======================================================
+   ESTILOS GERAIS
+====================================================== */
 
 body {
-    font-family: var(--font-family);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
     line-height: 1.6;
-    color: var(--secondary-color);
-    background-color: var(--background-light);
-    /* Previne rolagem horizontal (importante para mobile) */
-    overflow-x: hidden; 
 }
 
-/* Classes utilitárias para CTAs */
-.primary-cta {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    padding: 12px 25px;
-    border-radius: 6px;
+/* Cores e Variáveis (Exemplo) */
+:root {
+    --primary-color: #007bff; /* Azul primário */
+    --secondary-color: #28a745; /* Verde para sucesso/CTA */
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #fff;
+    --bg-dark: #222;
+}
+
+a {
     text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
     font-weight: 600;
-    /* Efeito sutil de transição para o hover */
-    transition: background-color 0.3s ease;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary-cta {
+    background-color: var(--primary-color);
+    color: var(--text-light);
 }
 
 .primary-cta:hover {
-    background-color: #0056b3 !important; 
+    background-color: #0056b3;
 }
 
 
-/* ========================================================== */
-/* 1. LAYOUT MOBILE (PADRÃO PARA TODA TELA < 768px) */
-/* ========================================================== */
+/* ======================================================
+   HEADER E NAVEGAÇÃO
+====================================================== */
 
-/* Estilos de Conteúdo */
-/* styles.css */
-/* Ajuste o padding do header */
-.main-header {
-    /* Aumenta o padding lateral para 10% */
-    padding: 15px 10%; 
-}
-
-/* Ajuste a largura do main (conteúdo principal) */
-main, footer {
-    /* Reduz a largura para 95% para dar mais respiro nas bordas do celular */
-    width: 95%; 
-    max-width: 1200px; 
-    margin: 0 auto;
-}
-
-/* Aumentar o espaçamento vertical entre as seções */
-section {
-    /* Aumenta de 50px para 70px */
-    padding: 70px 0; 
-    text-align: center;
-}
-
-/* Seções Padrão */
-section {
-    padding: 50px 0; /* Espaçamento vertical padrão no mobile */
-    text-align: center;
-}
-
-h1 {
-    font-size: 2em; /* Tamanho de fonte no mobile */
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 30px;
-    font-weight: 600;
-}
-
-/* Cabeçalho */
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-light);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .logo span {
+    font-size: 1.4em;
     font-weight: 700;
-    font-size: 1.2em;
     color: var(--primary-color);
-}
-
-/* Navegação Mobile (escondida por padrão) */
-/* styles.css */
-/* Garante que o menu flutue corretamente no mobile */
-.desktop-nav {
-    display: none; 
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 65px; /* Ajuste para caber abaixo do header */
-    left: 0;
-    background-color: white;
-    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-    z-index: 10;
-}
-
-.desktop-nav.active {
-    display: flex; /* Mostrado via JavaScript no mobile */
+    /* Corrigido o nome da marca */
+    white-space: nowrap; /* Garante que a logo fique em uma linha */
 }
 
 .desktop-nav a {
-    padding: 15px 5%;
-    text-decoration: none;
-    color: var(--secondary-color);
-    border-bottom: 1px solid #eee;
+    margin-left: 20px;
+    color: var(--text-dark);
 }
 
 .mobile-menu-toggle {
+    display: none; /* Esconde no desktop */
     background: none;
     border: none;
-    font-size: 1.5em;
+    font-size: 1.8em;
     cursor: pointer;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
+/* Esconder navegação mobile e botão mobile no desktop por padrão */
+.mobile-nav, .mobile-only, .cta-mobile-fixed {
+    display: none;
+}
+.desktop-only {
+    display: inline-block; /* Garante visibilidade no desktop */
+}
 
-/* Seção Hero */
+/* ======================================================
+   SEÇÃO HERO (DESTAQUE)
+====================================================== */
+
 .hero-section {
-    padding: 80px 5% 40px;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e9f7ff; /* Cor de fundo suave */
 }
 
-.subheadline {
-    font-size: 1.1em;
-    color: #555;
+.hero-content {
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 2.5em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    color: #666;
     margin-bottom: 30px;
 }
 
-
-/* Grid de Features (Mobile: uma coluna) */
-.features-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
+.hero-image-placeholder {
+    width: 45%;
+    min-height: 300px;
+    background-color: #ccc; /* Placeholder visual */
 }
 
-.feature-item {
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    text-align: left;
-}
-
-.feature-item h3 {
-    color: var(--primary-color);
-    margin-bottom: 10px;
-}
-
-/* ========================================================== */
-/* 2. ESTILOS DA SEÇÃO PORTFÓLIO */
-/* ========================================================== */
-
-.portfolio-section {
-    background-color: white;
-    padding: 60px 0;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 coluna */
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.portfolio-item {
-    text-align: left;
-    padding: 25px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-5px); /* Efeito sutil para indicar interação */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
-
-.portfolio-item h3 {
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-.secondary-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
+/* Botão principal (desktop) - Corrigido para não quebrar a linha */
+.cta-main {
     display: inline-block;
-    margin-top: 10px;
-}
-
-.tag-performance {
-    display: inline-block;
-    background-color: var(--background-light);
-    color: #555;
-    font-size: 0.8em;
-    padding: 5px 10px;
-    border-radius: 4px;
-    margin-top: 15px;
-    font-weight: 600;
-}
-
-
-/* RESPONSIVIDADE (Desktop/Tablet) */
-@media (min-width: 768px) {
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr); /* Desktop: 3 colunas */
-    }
-
-}
-
-/* Formulário de Contato */
-#lead-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-#lead-form input,
-#lead-form select {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.submit-button {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-/* Rodapé */
-.main-footer {
-    padding: 20px 5%;
+    padding: 15px 30px;
     background-color: var(--secondary-color);
-    color: #ccc;
-    font-size: 0.85em;
+    color: var(--text-light);
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    white-space: nowrap; /* CHAVE: Impede a quebra de linha do texto no desktop */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.cta-main:hover {
+    background-color: #1e7e34;
+}
+
+/* ======================================================
+   RODAPÉ
+====================================================== */
+
+.main-footer {
     text-align: center;
+    padding: 20px 5%;
+    background-color: var(--bg-dark);
+    color: #aaa;
+    font-size: 0.9em;
 }
 
-.main-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
+.main-footer p {
+    margin-bottom: 10px;
+    /* Corrigido o nome da marca */
 }
 
+.social-links a {
+    color: #aaa;
+    margin: 0 10px;
+}
 
-/* ========================================================== */
-/* 3. RESPONSIVIDADE - DESKTOP/TABLET (PRIMEIRA MEDIA QUERY) */
-/* ========================================================== */
+/* ======================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+====================================================== */
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     
-    /* Oculta o botão mobile e mostra o menu desktop */
-    .mobile-menu-toggle {
-        display: none;
-    }
-    
+    /* HEADER E NAVEGAÇÃO */
     .desktop-nav {
-        display: flex;
-        flex-direction: row; /* Volta a ser horizontal */
-        position: static; /* Volta para o fluxo normal */
-        width: auto;
-        box-shadow: none;
-        align-items: center;
-    }
-    
-    .desktop-nav a {
-        padding: 0;
-        border-bottom: none;
-        margin-left: 20px;
+        display: none; /* Esconde o menu de desktop */
     }
 
-    /* Tamanhos de Fonte Maiores */
-    h1 {
-        font-size: 3em;
+    .mobile-menu-toggle {
+        display: block; /* Mostra o ícone de menu mobile */
+    }
+    
+    /* HERO SECTION */
+    .hero-section {
+        flex-direction: column; /* Coloca itens em coluna */
+        text-align: center;
+        padding-top: 40px;
     }
 
-    /* Grid de Features (Desktop: duas ou mais colunas) */
-    .features-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 colunas padrão no desktop */
-        gap: 25px;
+    .hero-content, .hero-image-placeholder {
+        max-width: 100%;
+        width: 100%;
     }
     
-    /* Centraliza o formulário e permite mais espaço */
-    #lead-form {
-        flex-direction: row;
-        flex-wrap: wrap; /* Permite que os campos quebrem para o desktop */
-        max-width: 800px;
+    .hero-content {
+        order: 2; /* Move o conteúdo para baixo da imagem (se houver) */
+    }
+
+    .hero-image-placeholder {
+        order: 1;
+        margin-bottom: 30px;
+        min-height: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
     }
     
-    #lead-form input,
-    #lead-form select {
-        flex: 1 1 48%; /* Ocupa metade da linha */
+    /* BOTÕES */
+    .desktop-only {
+        display: none !important; /* Esconde o botão grande de desktop */
+    }
+
+    .mobile-only {
+        display: block; /* Mostra o novo botão simples para mobile */
+        width: 100%; /* Ocupa a largura total da coluna */
+        margin-top: 20px;
+        box-sizing: border-box;
     }
     
-    #lead-form button {
-        flex: 1 1 100%; /* Ocupa a linha inteira */
+    /* NOVO BOTÃO FLUTUANTE EXCLUSIVO PARA MOBILE */
+    .cta-mobile-fixed {
+        display: block; /* Mostra o botão flutuante apenas no mobile */
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        
+        padding: 10px 15px;
+        background-color: var(--secondary-color); /* Verde WhatsApp */
+        color: var(--text-light);
+        border-radius: 50px; /* Borda arredondada */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        font-weight: 600;
+        font-size: 1em;
+        line-height: 1.2;
+    }
+    
+    .cta-mobile-fixed i {
+        margin-right: 8px;
+        font-size: 1.3em;
     }
 }
