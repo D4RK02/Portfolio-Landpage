@@ -1,6 +1,6 @@
-# 🚀 Landing Page de Serviços MARCONE OLIVEIRA - Serviços Digitais e Informática
+# 🚀 Landing Page de Serviços Ethernos - Serviços Digitais e Informática
 
-Este repositório contém o código-fonte da Landing Page oficial de MARCONE OLIVEIRA - Serviços Digitais e Informática, focada em **Conversão Rápida**, **Performance SEO (Nota Verde)** e **Automação com Chatbots de IA**.
+Este repositório contém o código-fonte do site oficial de Ethernos - Serviços Digitais e Informática, focada em **Conversão Rápida**, **Performance SEO (Nota Verde)**, **Design**, **Social Media** e **Automação com Chatbots de IA**.
 
 Esta arquitetura é a prova de que entregamos o que vendemos: um site ultrarrápido, otimizado para mobile e pronto para captar leads em 48 horas.
 
@@ -20,7 +20,7 @@ Esta arquitetura é a prova de que entregamos o que vendemos: um site ultrarráp
 
 ## 🔒 Direitos Autorais e Licença (Uso Exclusivo)
 
-Este projeto é de **Uso Exclusivo e Autoria Integral de MARCONE OLIVEIRA**.
+Este projeto é de **Uso Exclusivo e Autoria Integral de MARCONE OLIVEIRA/ETHERNOS**.
 
 O código aqui presente é a nossa **Propriedade Intelectual** e serve como nosso portfólio de performance. A cópia, distribuição ou revenda deste código, total ou parcial, sem autorização expressa do autor, é estritamente proibida e sujeita a penalidades legais. Todos os direitos reservados.
 
