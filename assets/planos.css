@@ -1,188 +1,214 @@
-/* assets/planos.css - Estilos específicos para a página de planos (Cards e Estética) */
-
-/* ========================================================== */
-/* 1. LAYOUT BASE E HEADER */
-/* ========================================================== */
-
-/* Nota: Variáveis de cor e fonte estão definidas em styles.css */
-/* O cabeçalho main-header e o main-footer herdam de styles.css */
+/* ======================================================
+   ESTILOS ESPECÍFICOS: PLANOS DE PREÇO
+   (Complemento ao styles.css)
+====================================================== */
 
 .plans-container {
-    padding: 30px 0;
+    padding: 60px 5%;
+    text-align: center;
 }
 
 .pricing-header {
-    text-align: center;
     margin-bottom: 50px;
 }
 
 .pricing-header h1 {
-    font-size: 2em;
-    color: var(--secondary-color);
+    font-size: 2.2em;
+    color: var(--text-dark);
 }
 
 .pricing-header p {
-    color: #777;
+    font-size: 1.1em;
+    color: #b0b0b0;
 }
-
-/* ========================================================== */
-/* 2. TABELA DE PLANOS (CARDS) */
-/* ========================================================== */
 
 .pricing-table {
     margin-bottom: 60px;
-    text-align: center; 
 }
 
-/* Container do Grid de Planos */
+.pricing-table h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
 .plans-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 coluna por padrão */
+    display: flex;
+    justify-content: center;
     gap: 30px;
-    padding: 20px 0;
-    margin: 0 auto; 
-    max-width: 1000px; 
 }
 
-/* Card Individual do Plano (O "Quadrado") */
 .plan-card {
-    background-color: white;
-    padding: 30px;
+    background-color: var(--bg-dark);
+    padding: 30px 20px;
     border-radius: 10px;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    /* Garante que o card tenha altura suficiente para alinhar no grid */
-    min-height: 450px; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+    flex: 1;
+    max-width: 350px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
 }
 
 .plan-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
 }
 
-/* Destaque para o plano mais vendido (Ouro) */
+.plan-card h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+.setup-price {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 5px 0;
+    color: var(--primary-color);
+}
+
+.recurring-price {
+    font-size: 1em;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 30px 0;
+}
+
+.features-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
+    color: var(--text-dark);
+    font-size: 0.95em;
+}
+
+/* Ícones de Check (✅) e X (❌) */
+.features-list li::before {
+    margin-right: 10px;
+}
+
+.features-list li:first-child {
+    border-top: 1px dashed #333;
+}
+
+.cta-plan-btn {
+    display: block;
+    width: 90%;
+    margin: 20px auto 0;
+    padding: 12px 0;
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-plan-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+/* Estilo para o Plano de Destaque (Plano Ouro) */
 .featured-plan {
     border: 3px solid var(--primary-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    /* Destaque sutil vertical no desktop sem quebrar o grid */
-    margin-top: -15px; 
-    margin-bottom: -15px; 
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+    background-color: #252525; /* Fundo levemente diferente */
 }
 
-/* Banner "Mais Popular" (Faixa Amarela) */
+.featured-plan .cta-plan-btn,
+.featured-plan .primary-cta {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+.featured-plan .cta-plan-btn:hover {
+    background-color: #388e3c;
+}
+
+/* Tag "MAIS POPULAR" */
 .featured-plan::before {
     content: "MAIS POPULAR";
     position: absolute;
     top: 15px;
     right: -30px;
-    background-color: #ffc107; 
-    color: #333;
-    padding: 5px 30px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
     font-size: 0.8em;
     font-weight: 700;
-    transform: rotate(45deg); 
-    z-index: 5;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-.plan-card h3 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: var(--primary-color);
+/* Modalidade Secundária (Chatbots) */
+.secondary-pricing {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 10px;
 }
 
-/* Preços */
-.setup-price {
-    font-size: 2.2em; 
-    font-weight: 700;
-    color: var(--secondary-color);
-    margin-bottom: 5px;
+.secondary-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
 }
 
-.recurring-price {
-    font-size: 1.1em;
-    color: #888;
-    margin-bottom: 25px;
-}
-
-/* Lista de Recursos */
-.features-list {
-    list-style: none;
-    text-align: left; 
-    margin: 25px 0 30px;
-    padding: 0 10px; /* Adiciona padding interno */
-    display: inline-block; 
-    max-width: 90%; /* Limita a largura da lista para não encostar nas bordas do card */
-}
-
-.features-list li {
-    padding: 12px 0; 
-    border-bottom: 1px dashed #eee;
-    color: #444;
-}
-
-/* Botão de CTA no Plano */
-.cta-plan-btn {
-    display: block;
-    width: 100%;
-    padding: 15px;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 700;
-    border-radius: 6px;
-    border: 2px solid var(--primary-color);
-    background-color: white;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-}
-
-/* Estilo para o botão do Plano Ouro (destaque) */
-.featured-plan .primary-cta {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    border-color: var(--primary-color);
-}
-
-.cta-plan-btn:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-
-/* Estilos para planos secundários (Modalidade B - Chatbots Avulsos) */
-.secondary-pricing .plans-grid {
-    gap: 20px;
-    min-height: auto; /* Permite que o card se ajuste */
-}
-.secondary-pricing .plan-card {
+.small-card {
+    flex: 0 1 250px; /* Cartões menores */
     padding: 20px;
-    min-height: auto;
 }
 
+/* ======================================================
+   RESPONSIVIDADE (MEDIA QUERIES) para Planos
+====================================================== */
 
-/* ========================================================== */
-/* 3. RESPONSIVIDADE (DESKTOP) */
-/* ========================================================== */
-
-@media (min-width: 768px) {
-    
-    .pricing-header h1 {
-        font-size: 2.5em;
-    }
-    
-    /* DESKTOP: 3 Colunas para Sites */
+@media (max-width: 1024px) {
     .plans-grid {
-        grid-template-columns: repeat(3, 1fr); 
+        flex-wrap: wrap;
     }
+    .plan-card {
+        flex: 1 1 45%; /* 2 colunas em tablets */
+        max-width: 45%;
+    }
+    .secondary-grid {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+    .small-card {
+        flex: 1 1 45%;
+    }
+}
 
-    /* DESKTOP: 2 Colunas para Bots */
-    .secondary-pricing .plans-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 650px;
+@media (max-width: 768px) {
+    .plans-grid, .secondary-grid {
+        flex-direction: column; /* 1 coluna em celulares */
+        gap: 20px;
+    }
+    
+    .plan-card, .small-card {
+        max-width: 100%;
         margin: 0 auto;
     }
-
+    
+    .featured-plan {
+        transform: none; /* Remove o scale no mobile */
+    }
+    
+    .featured-plan::before {
+        font-size: 0.7em;
+        right: -35px;
+    }
 }
