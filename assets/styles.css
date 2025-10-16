@@ -1,37 +1,44 @@
 /* ======================================================
-   ESTILOS GERAIS
+   ESTILOS GERAIS - TEMA ESCURO
 ====================================================== */
+
+:root {
+    /* Cores atualizadas para Dark Mode e Branding Ethernos */
+    --primary-color: #4CAF50;    /* Verde (Ação) - Para botões (Contratar/CTA) */
+    --secondary-color: #00bcd4; /* Ciano/Azul Claro - Para links e destaque */
+    --text-dark: #eee;           /* Texto principal (Claro) */
+    --text-light: #1a1a1a;       /* Texto em fundos claros/botões */
+    --bg-deep-dark: #121212;     /* Fundo principal (Preto Profundo) */
+    --bg-dark: #1e1e1e;          /* Fundo de seções/cards */
+    
+    /* Gradiente da Logo Ethernos (Roxo para Azul Claro) */
+    --logo-gradient: linear-gradient(135deg, #a020f0, #00bfff); 
+}
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
-    color: #333;
+    background-color: var(--bg-deep-dark); 
+    color: var(--text-dark); 
     line-height: 1.6;
 }
 
-/* Cores e Variáveis (Exemplo) */
-:root {
-    --primary-color: #007bff; /* Azul primário */
-    --secondary-color: #28a745; /* Verde para sucesso/CTA */
-    --text-dark: #333;
-    --text-light: #fff;
-    --bg-light: #fff;
-    --bg-dark: #222;
+h1, h2, h3 {
+    color: var(--text-dark);
 }
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-/* Botões CTA */
+/* Botões CTA Genéricos */
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
@@ -43,11 +50,11 @@ a:hover {
 
 .primary-cta {
     background-color: var(--primary-color);
-    color: var(--text-light);
+    color: var(--text-light); 
 }
 
 .primary-cta:hover {
-    background-color: #0056b3;
+    background-color: #388e3c; 
 }
 
 
@@ -60,16 +67,33 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background-color: var(--bg-light);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: var(--bg-dark); 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5); 
 }
 
-.logo span {
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 30px; 
+    width: auto;
+    margin-right: 10px;
+}
+
+/* Estilo para o texto com Gradiente */
+.logo-text {
     font-size: 1.4em;
     font-weight: 700;
-    color: var(--primary-color);
-    /* Corrigido o nome da marca */
-    white-space: nowrap; /* Garante que a logo fique em uma linha */
+    white-space: nowrap;
+    
+    background: var(--logo-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
 }
 
 .desktop-nav a {
@@ -77,8 +101,12 @@ a:hover {
     color: var(--text-dark);
 }
 
+.desktop-nav a:hover {
+    color: var(--secondary-color);
+}
+
 .mobile-menu-toggle {
-    display: none; /* Esconde no desktop */
+    display: none; 
     background: none;
     border: none;
     font-size: 1.8em;
@@ -91,8 +119,9 @@ a:hover {
     display: none;
 }
 .desktop-only {
-    display: inline-block; /* Garante visibilidade no desktop */
+    display: inline-block; 
 }
+
 
 /* ======================================================
    SEÇÃO HERO (DESTAQUE)
@@ -103,7 +132,7 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #e9f7ff; /* Cor de fundo suave */
+    background-color: var(--bg-deep-dark); 
 }
 
 .hero-content {
@@ -112,39 +141,175 @@ a:hover {
 
 .hero-content h1 {
     font-size: 2.5em;
-    color: var(--text-dark);
     margin-bottom: 15px;
 }
 
 .hero-content p {
     font-size: 1.2em;
-    color: #666;
+    color: #b0b0b0; 
     margin-bottom: 30px;
 }
 
 .hero-image-placeholder {
     width: 45%;
     min-height: 300px;
-    background-color: #ccc; /* Placeholder visual */
+    background-color: transparent; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    border-radius: 8px;
+}
+
+.hero-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
 }
 
 /* Botão principal (desktop) - Corrigido para não quebrar a linha */
 .cta-main {
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--text-light);
     font-size: 1.1em;
     font-weight: 700;
     border-radius: 8px;
     letter-spacing: 1px;
-    white-space: nowrap; /* CHAVE: Impede a quebra de linha do texto no desktop */
-    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+    white-space: nowrap; /* Impede a quebra de linha do texto no desktop */
+    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
 }
 
 .cta-main:hover {
-    background-color: #1e7e34;
+    background-color: #388e3c;
 }
+
+/* ======================================================
+   SEÇÃO SOLUÇÕES 
+====================================================== */
+
+.solutions-section {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: var(--bg-deep-dark);
+}
+
+.solutions-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.solution-card {
+    flex: 1;
+    max-width: 350px;
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.solution-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.solution-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.solution-card:hover .solution-image img {
+    transform: scale(1.05); 
+}
+
+.solution-card h3 {
+    color: var(--secondary-color);
+    margin: 15px 0 10px;
+}
+
+.solution-card p {
+    padding: 0 15px;
+    font-size: 0.95em;
+    color: #b0b0b0;
+}
+
+
+/* ======================================================
+   SEÇÃO QUEM SOMOS
+====================================================== */
+
+.about-hero-section {
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-dark); 
+}
+
+.about-content {
+    max-width: 50%;
+    padding-right: 30px;
+}
+
+.about-image-placeholder {
+    width: 45%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.services-detail-section {
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--bg-dark);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid #333;
+    text-align: left;
+}
+
+.service-item h3 {
+    color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+.service-item p {
+    color: #b0b0b0;
+    font-size: 0.9em;
+}
+
+.service-icon img {
+    height: 50px;
+    width: 50px;
+    /* Filtro para garantir que ícones SVG/PNG fiquem visíveis no fundo escuro */
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--secondary-color)); 
+}
+
 
 /* ======================================================
    RODAPÉ
@@ -158,15 +323,11 @@ a:hover {
     font-size: 0.9em;
 }
 
-.main-footer p {
-    margin-bottom: 10px;
-    /* Corrigido o nome da marca */
-}
-
 .social-links a {
     color: #aaa;
     margin: 0 10px;
 }
+
 
 /* ======================================================
    RESPONSIVIDADE (MEDIA QUERIES)
@@ -176,16 +337,16 @@ a:hover {
     
     /* HEADER E NAVEGAÇÃO */
     .desktop-nav {
-        display: none; /* Esconde o menu de desktop */
+        display: none; 
     }
 
     .mobile-menu-toggle {
-        display: block; /* Mostra o ícone de menu mobile */
+        display: block; 
     }
     
     /* HERO SECTION */
     .hero-section {
-        flex-direction: column; /* Coloca itens em coluna */
+        flex-direction: column; 
         text-align: center;
         padding-top: 40px;
     }
@@ -196,7 +357,7 @@ a:hover {
     }
     
     .hero-content {
-        order: 2; /* Move o conteúdo para baixo da imagem (se houver) */
+        order: 2; 
     }
 
     .hero-image-placeholder {
@@ -209,34 +370,60 @@ a:hover {
         font-size: 1.8em;
     }
 
-    .hero-content p {
-        font-size: 1em;
+    /* SOLUÇÕES RESPONSIVAS */
+    .solutions-grid {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    .solution-card {
+        max-width: 100%;
+    }
+    
+    .solution-image {
+        height: 180px; 
+    }
+    
+    /* QUEM SOMOS RESPONSIVO */
+    .about-hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .about-image-placeholder {
+        width: 100%;
     }
     
     /* BOTÕES */
     .desktop-only {
-        display: none !important; /* Esconde o botão grande de desktop */
+        display: none !important; 
     }
 
     .mobile-only {
-        display: block; /* Mostra o novo botão simples para mobile */
-        width: 100%; /* Ocupa a largura total da coluna */
+        display: block; 
+        width: 100%; 
         margin-top: 20px;
         box-sizing: border-box;
     }
     
-    /* NOVO BOTÃO FLUTUANTE EXCLUSIVO PARA MOBILE */
+    /* BOTÃO FLUTUANTE EXCLUSIVO PARA MOBILE (WhatsApp) */
     .cta-mobile-fixed {
-        display: block; /* Mostra o botão flutuante apenas no mobile */
+        display: block; 
         position: fixed;
         bottom: 20px;
         right: 20px;
         z-index: 1000;
         
         padding: 10px 15px;
-        background-color: var(--secondary-color); /* Verde WhatsApp */
+        background-color: var(--primary-color);
         color: var(--text-light);
-        border-radius: 50px; /* Borda arredondada */
+        border-radius: 50px; 
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
         font-weight: 600;
         font-size: 1em;
