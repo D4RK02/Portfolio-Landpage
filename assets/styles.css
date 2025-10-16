@@ -114,12 +114,19 @@ a:hover {
     color: var(--primary-color);
 }
 
-/* Esconder navegação mobile e botão mobile no desktop por padrão */
-.mobile-nav, .mobile-only, .cta-mobile-fixed {
-    display: none;
+/* CORREÇÃO: Garantir que .mobile-only esteja oculto no desktop
+    e .desktop-only esteja visível no desktop.
+*/
+.mobile-only {
+    display: none !important; /* Esconde por padrão no desktop */
 }
 .desktop-only {
-    display: inline-block; 
+    display: inline-block !important; /* Mostra por padrão no desktop */
+}
+
+/* Esconder botão flutuante no desktop */
+.cta-mobile-fixed {
+    display: none;
 }
 
 
@@ -177,8 +184,9 @@ a:hover {
     font-weight: 700;
     border-radius: 8px;
     letter-spacing: 1px;
-    white-space: nowrap; /* Impede a quebra de linha do texto no desktop */
+    white-space: nowrap; 
     box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
+    margin-right: 15px; /* Espaço entre botões CTA na mesma linha */
 }
 
 .cta-main:hover {
@@ -191,7 +199,7 @@ a:hover {
 
 .solutions-section {
     padding: 60px 5%;
-    text-align: center;
+    text-align: center; /* CORRIGIDO: Centralizar conteúdo da seção */
     background-color: var(--bg-deep-dark);
 }
 
@@ -238,6 +246,22 @@ a:hover {
     padding: 0 15px;
     font-size: 0.95em;
     color: #b0b0b0;
+}
+
+
+/* ======================================================
+   SEÇÃO PORTFÓLIO E CONTATO (CORRIGIDO CENTRALIZAÇÃO)
+====================================================== */
+.portfolio-section,
+.contact-section {
+    padding: 60px 5%;
+    text-align: center; /* CORRIGIDO: Centralizar o conteúdo destas seções */
+    background-color: var(--bg-deep-dark);
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto 30px auto; /* Centraliza o parágrafo */
 }
 
 
@@ -291,23 +315,33 @@ a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 1px solid #333;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o ícone e o título */
+}
+
+/* CORRIGIDO: Estilo para ícones Font Awesome na seção "Quem Somos" */
+.service-icon {
+    margin-bottom: 15px;
+    font-size: 3.5em; /* Aumenta o tamanho do ícone */
+    color: var(--secondary-color); /* Cor dos ícones Font Awesome */
+    display: flex; /* Garante que o ícone seja tratado como bloco flexível */
+    justify-content: center; /* Centraliza o ícone */
+    align-items: center; /* Centraliza o ícone */
+    height: 60px; /* Garante espaço para o ícone */
+    width: 60px; /* Garante espaço para o ícone */
 }
 
 .service-item h3 {
     color: var(--secondary-color);
     margin-top: 10px;
+    text-align: center;
 }
 
 .service-item p {
     color: #b0b0b0;
     font-size: 0.9em;
-}
-
-.service-icon img {
-    height: 50px;
-    width: 50px;
-    /* Filtro para garantir que ícones SVG/PNG fiquem visíveis no fundo escuro */
-    filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--secondary-color)); 
+    text-align: center;
 }
 
 
@@ -342,6 +376,18 @@ a:hover {
 
     .mobile-menu-toggle {
         display: block; 
+    }
+    
+    /* CORREÇÃO: Botões Hero Section */
+    .desktop-only {
+        display: none !important; /* Esconde o botão desktop no mobile */
+    }
+
+    .mobile-only {
+        display: block !important; /* Mostra o botão mobile no mobile */
+        width: 100%; 
+        margin-top: 20px;
+        box-sizing: border-box; /* Garante que padding não estoure o layout */
     }
     
     /* HERO SECTION */
@@ -400,21 +446,9 @@ a:hover {
         width: 100%;
     }
     
-    /* BOTÕES */
-    .desktop-only {
-        display: none !important; 
-    }
-
-    .mobile-only {
-        display: block; 
-        width: 100%; 
-        margin-top: 20px;
-        box-sizing: border-box;
-    }
-    
     /* BOTÃO FLUTUANTE EXCLUSIVO PARA MOBILE (WhatsApp) */
     .cta-mobile-fixed {
-        display: block; 
+        display: block !important; /* Garante que apareça no mobile */
         position: fixed;
         bottom: 20px;
         right: 20px;
