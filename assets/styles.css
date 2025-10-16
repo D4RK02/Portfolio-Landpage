@@ -469,3 +469,161 @@ a:hover {
         font-size: 1.3em;
     }
 }
+/* ======================================================
+   ESTILOS ESPECÍFICOS DA PÁGINA PLANOS
+====================================================== */
+
+/* Container Principal dos Planos */
+.plans-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 5%; /* Ajustado para seguir o padding geral */
+    text-align: center;
+}
+
+/* Título de Seção */
+.section-title {
+    font-size: 2em;
+    color: var(--text-dark);
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+/* Layout em Grid para os Planos */
+.plans-grid {
+    display: grid;
+    /* Usa 3 colunas em desktop, responsivo com minmax */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Estilo do Card Individual */
+.plan-card {
+    background-color: var(--bg-dark); 
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+    position: relative; 
+    overflow: hidden; 
+    display: flex; /* Adiciona flex para alinhamento interno */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color);
+}
+
+/* FAIXA "MAIS POPULAR" */
+.plan-card.popular {
+    border-color: var(--secondary-color); 
+}
+
+.plan-card .ribbon {
+    position: absolute;
+    top: 15px; /* Ajusta a posição da fita */
+    right: -30px; /* Puxa para fora do canto */
+    background-color: var(--secondary-color); 
+    color: var(--text-light);
+    padding: 5px 30px;
+    font-size: 0.85em;
+    font-weight: 700;
+    transform: rotate(45deg);
+    z-index: 10;
+}
+
+/* Cabeçalho do Plano */
+.plan-header h3 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    background: var(--logo-gradient); /* Título com gradiente */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.price-full {
+    font-size: 1.2em;
+    color: #888;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+.price-monthly {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-color); /* Destaque o preço com a cor primária */
+    margin: 5px 0 20px;
+}
+
+/* Lista de Recursos */
+.features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Garante que a lista preencha o espaço entre o cabeçalho e o botão */
+}
+
+.features-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #333;
+    color: var(--text-dark);
+    font-size: 1em;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+/* Destaque para o texto em <strong> */
+.features-list strong {
+    color: var(--secondary-color); 
+}
+
+/* Botões CTA dos Planos */
+.cta-plan {
+    display: block;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.cta-plan:hover {
+    background-color: #388e3c;
+}
+
+/* Cores específicas para os botões Ouro e Platinum (se desejar diferenciar) */
+.cta-gold {
+    background-color: var(--secondary-color);
+}
+.cta-gold:hover {
+    background-color: #0097a7;
+}
+.cta-platinum {
+    /* Usando um gradiente de destaque ou uma cor forte */
+    background: linear-gradient(90deg, #a020f0, #e30752); 
+    color: white;
+}
+.cta-platinum:hover {
+    background: linear-gradient(90deg, #8a1cb5, #c90647);
+}
+
+/* RESPONSIVIDADE ADICIONAL PARA MOBILE (Seção Planos) */
+@media (max-width: 768px) {
+    .plans-grid {
+        /* No mobile, as colunas se empilham */
+        grid-template-columns: 1fr;
+    }
+}
