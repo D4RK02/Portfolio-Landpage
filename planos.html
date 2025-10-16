@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Planos | Ethernos</title>
+    <meta name="description" content="Conheça os planos Prata, Ouro e Platinum da Ethernos para sites de alta performance, e as modalidades de Bots (Essencial e PRO).">
     
     <link rel="icon" type="image/png" href="assets/images/ethernos-logo-gradiente.png"> 
+
+    <link rel="stylesheet" href="assets/styles.css">
     
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
 
     <header class="main-header">
@@ -17,105 +22,119 @@
                 <span class="logo-text">Ethernos - Serviços Digitais e Informática</span>
             </a>
         </div>
+        
         <nav class="desktop-nav" id="main-nav">
             <a href="index.html">Início</a>
-            <a href="planos.html">Planos</a>
+            <a href="planos.html" class="cta-button primary-cta">Planos</a>
             <a href="index.html#contato">Contato</a>
-            <a href="quem-somos.html" class="cta-button primary-cta">Quem Somos</a>
+            <a href="quem-somos.html">Quem Somos</a>
         </nav>
         <button class="mobile-menu-toggle" aria-label="Abrir Menu">☰</button>
     </header>
 
     <main class="plans-container">
-        
-        <section class="pricing-header">
+
+        <section class="plans-hero-section">
             <h1>Escolha Seu Plano de Crescimento Acelerado</h1>
             <p>O investimento certo para a performance que o seu negócio exige.</p>
         </section>
 
-        <section id="sites-plans" class="pricing-table">
-            <h2>Modalidade A: Sites e Landing Pages de Alta Performance</h2>
-
-            <div class="plans-grid">
-                
-                <article class="plan-card">
+        <h2 class="section-title">Modalidade A: Sites e Landing Pages de Alta Performance</h2>
+        <div class="plans-grid">
+            
+            <div class="plan-card">
+                <div class="plan-header">
                     <h3>Plano Prata</h3>
-                    <p class="setup-price">R$ 1.500</p>
-                    <p class="recurring-price">R$ 150 / mês</p>
-                    
-                    <ul class="features-list">
-                        <li>✅ Site Institucional (3-5 Páginas)</li>
-                        <li>✅ Arquitetura Headless (Velocidade Extrema)</li>
-                        <li>✅ **Hospedagem Gerenciada** (Custo Zero para o Cliente)</li>
-                        <li>❌ Chatbot de Qualificação</li>
-                        <li>❌ Integração IA/LLM</li>
-                    </ul>
-                    <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20de%20Sites." target="_blank" class="cta-plan-btn">Iniciar com Prata</a>
-                </article>
+                    <p class="price-full">R$ 1.500</p>
+                    <p class="price-monthly">R$ 150 / mês</p>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Site Institucional (3-5 Páginas)</li>
+                    <li>✅ Arquitetura Headless (Velocidade Extrema)</li>
+                    <li>✅ <strong>Hospedagem Gerenciada</strong> (Custo Zero para o Cliente)</li>
+                    <li>❌ Chatbot de Qualificação</li>
+                    <li>❌ Integração IA/LLM</li>
+                </ul>
+                <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Prata%20de%20Sites." class="cta-plan">Iniciar com Prata</a>
+            </div>
 
-                <article class="plan-card featured-plan">
+            <div class="plan-card popular">
+                <span class="ribbon">MAIS POPULAR</span>
+                <div class="plan-header">
                     <h3>Plano Ouro</h3>
-                    <p class="setup-price">R$ 1.299</p>
-                    <p class="recurring-price">R$ 180 / mês</p>
-                    
-                    <ul class="features-list">
-                        <li>✅ Landing Page de 1 Página (Foco em Vendas)</li>
-                        <li>✅ **Entrega em 48 Horas**</li>
-                        <li>✅ **Chatbot Essencial** (FAQ e Qualificação)</li>
-                        <li>✅ Hospedagem Gerenciada</li>
-                        <li>❌ Integração IA/LLM</li>
-                    </ul>
-                    <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro%20de%20Sites." target="_blank" class="cta-plan-btn primary-cta">Contratar Ouro</a>
-                </article>
+                    <p class="price-full">R$ 1.299</p>
+                    <p class="price-monthly">R$ 180 / mês</p>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Landing Page de 1 Página (Foco em Vendas)</li>
+                    <li>✅ <strong>Entrega em 48 Horas</strong></li>
+                    <li>✅ <strong>Chatbot Essencial</strong> (FAQ e Qualificação)</li>
+                    <li>✅ Hospedagem Gerenciada</li>
+                    <li>❌ Integração IA/LLM</li>
+                </ul>
+                <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Ouro%20de%20Sites." class="cta-plan cta-gold">Contratar Ouro</a>
+            </div>
 
-                <article class="plan-card">
+            <div class="plan-card">
+                <div class="plan-header">
                     <h3>Plano Platinum</h3>
-                    <p class="setup-price">R$ 2.500</p>
-                    <p class="recurring-price">R$ 350 / mês</p>
-                    
-                    <ul class="features-list">
-                        <li>✅ Site Institucional Completo ou E-commerce Simples</li>
-                        <li>✅ Suporte e Otimização Prioritária</li>
-                        <li>✅ **Chatbot PRO** (IA/LLM e Integração CRM)</li>
-                        <li>✅ **Relatórios de Performance Mensais**</li>
-                        <li>✅ Domínio Grátis por 1 Ano (Cliente paga apenas a renovação)</li>
-                    </ul>
-                    <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Platinum%20de%20Sites." target="_blank" class="cta-plan-btn">Contratar Platinum</a>
-                </article>
+                    <p class="price-full">R$ 2.500</p>
+                    <p class="price-monthly">R$ 350 / mês</p>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Site Institucional Completo ou E-commerce Simples</li>
+                    <li>✅ Suporte e Otimização Prioritária</li>
+                    <li>✅ <strong>Chatbot PRO</strong> (IA/LLM e Integração CRM)</li>
+                    <li>✅ <strong>Relatórios de Performance Mensais</strong></li>
+                    <li>✅ Domínio Grátis por 1 Ano (Cliente paga apenas a renovação)</li>
+                </ul>
+                <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Plano%20Platinum%20de%20Sites." class="cta-plan cta-platinum">Contratar Platinum</a>
+            </div>
+        </div>
 
-            </div>
-        </section>
-        
-        <section id="bot-plans" class="pricing-table secondary-pricing">
-            <h2>Modalidade B: Criação de Assistentes Virtuais (Avulso)</h2>
-            <div class="secondary-grid">
-                <article class="plan-card small-card">
+        <h2 class="section-title">Modalidade B: Criação de Assistentes Virtuais (Avulso)</h2>
+        <div class="plans-grid">
+            
+            <div class="plan-card">
+                <div class="plan-header">
                     <h3>Bot Essencial</h3>
-                    <p class="setup-price">R$ 900</p>
-                    <p class="recurring-price">R$ 180 / mês</p>
-                    <ul class="features-list">
-                        <li>✅ Respostas a Perguntas Frequentes (FAQ)</li>
-                        <li>✅ Qualificação de Leads Básica</li>
-                        <li>❌ Integração com IA (LLMs)</li>
-                    </ul>
-                    <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Bot%20Essencial." target="_blank" class="cta-plan-btn">Contratar Bot</a>
-                </article>
-                <article class="plan-card small-card">
-                    <h3>Bot PRO (IA/LLM)</h3>
-                    <p class="setup-price">R$ 1.600</p>
-                    <p class="recurring-price">R$ 300 / mês</p>
-                    <ul class="features-list">
-                        <li>✅ Respostas Dinâmicas com IA (LLMs)</li>
-                        <li>✅ Integração com CRM (HubSpot/PipeDrive, etc)</li>
-                        <li>✅ Suporte a Agendamento</li>
-                    </ul>
-                    <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Bot%20PRO%20(IA%2FLLM)." target="_blank" class="cta-plan-btn">Contratar Bot PRO</a>
-                </article>
+                    <p class="price-full">R$ 900</p>
+                    <p class="price-monthly">R$ 180 / mês</p>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Respostas a Perguntas Frequentes (FAQ)</li>
+                    <li>✅ Qualificação de Leads Básica</li>
+                    <li>❌ Integração com IA (LLMs)</li>
+                </ul>
+                <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Bot%20Essencial." class="cta-plan">Contratar Bot</a>
             </div>
+            
+            <div class="plan-card popular">
+                <div class="plan-header">
+                    <h3>Bot PRO (IA/LLM)</h3>
+                    <p class="price-full">R$ 1.600</p>
+                    <p class="price-monthly">R$ 300 / mês</p>
+                </div>
+                <ul class="features-list">
+                    <li>✅ Respostas Dinâmicas com IA (LLMs)</li>
+                    <li>✅ Integração com CRM (HubSpot/PipeDrive, etc)</li>
+                    <li>✅ Suporte a Agendamento</li>
+                </ul>
+                <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Bot%20PRO%20(IA%2FLLM)." class="cta-plan cta-gold">Contratar Bot PRO</a>
+            </div>
+
+        </div>
+
+        <section class="contact-section" id="contato-planos">
+            <h2>Pronto para Começar?</h2>
+            <p>Entre em contato para solicitar sua avaliação gratuita e descobrir a solução ideal para o seu negócio.</p>
+            <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20os%20servi%C3%A7os%20da%20Ethernos" target="_blank" class="cta-main cta-whatsapp">
+                CHAMAR NO WHATSAPP
+            </a>
         </section>
 
     </main>
-
+    
     <a href="https://wa.me/5583993617610?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20os%20servi%C3%A7os%20da%20Ethernos" target="_blank" class="cta-mobile-fixed">
         <i class="fab fa-whatsapp"></i> FALE CONOSCO
     </a>
