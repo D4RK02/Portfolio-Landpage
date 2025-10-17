@@ -16,7 +16,7 @@
     --border-radius: 8px;
 }
 
-/* Base Geral (FALLBACK DE FUNDO) */
+/* Base Geral (CORREÇÃO DE FUNDO E TEXTO SEM FORÇAR DEMAIS) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,7 +26,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-    background-color: var(--primary-color); /* Garante o fundo preto */
+    background-color: var(--primary-color); /* Fundo preto base */
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -46,15 +46,16 @@ h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 0.5em;
     line-height: 1.2;
+    color: var(--text-color);
 }
 
 h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
-/* Header e Navegação (FALLBACK DE FUNDO E TEXTO) */
+/* Header e Navegação */
 .main-header {
-    background-color: var(--dark-gray); /* Garante fundo escuro */
+    background-color: var(--dark-gray); /* Fundo cinza escuro no cabeçalho */
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -121,22 +122,22 @@ h3 { font-size: 1.5em; }
     cursor: pointer;
 }
 
-/* Seções Padrão (FALLBACK DE FUNDO) */
+/* Seções Padrão */
 section {
     padding: 60px 5%;
     text-align: center;
-    background-color: var(--primary-color); /* Fallback de cor para todas as seções */
+    background-color: var(--primary-color); /* Fundo preto padrão */
 }
 
 /* SEÇÃO HERO */
 .hero-section {
+    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 80px 5%;
     text-align: left;
     min-height: 80vh;
-    background-color: var(--primary-color); /* Garante fundo preto */
 }
 
 .hero-content {
@@ -173,7 +174,7 @@ section {
 
 .cta-main {
     display: inline-block;
-    background-color: var(--cta-color); /* Usando a cor ciano/verde dos botões de avaliação */
+    background-color: var(--cta-color);
     color: var(--primary-color) !important;
     padding: 15px 30px;
     border-radius: 50px;
@@ -193,7 +194,7 @@ section {
 
 /* SEÇÃO SOLUÇÕES */
 .solutions-section {
-    background-color: var(--dark-gray); /* Garante fundo cinza escuro nos cards */
+    background-color: var(--dark-gray); /* Fundo cinza escuro para a área de cards */
     padding-top: 40px;
 }
 
@@ -227,7 +228,7 @@ section {
 }
 
 .solution-card h3 {
-    color: var(--secondary-color); /* Azul Vibrante nos títulos */
+    color: var(--secondary-color); /* Azul Vibrante nos títulos dos cards */
     margin-bottom: 10px;
 }
 
@@ -275,9 +276,9 @@ section {
 }
 
 
-/* FOOTER (FALLBACK DE FUNDO) */
+/* FOOTER */
 .main-footer {
-    background-color: var(--dark-gray); /* Garante fundo cinza escuro */
+    background-color: var(--dark-gray); /* Fundo cinza escuro */
     color: #bbb;
     text-align: center;
     padding: 20px 5%;
@@ -300,7 +301,7 @@ section {
 
 .plans-container {
     padding: 0;
-    background-color: var(--primary-color); /* Garante fundo preto */
+    background-color: var(--primary-color); /* Fundo preto base */
 }
 
 .plans-hero-section {
@@ -315,12 +316,12 @@ section {
 }
 
 .plans-grid {
+    background-color: var(--primary-color); /* Fundo preto na área da grade */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding: 40px 5%;
-    background-color: var(--primary-color); /* Garante fundo preto na área da grade */
 }
 
 .plan-card {
@@ -364,7 +365,7 @@ section {
 }
 
 .plan-header h3 {
-    color: var(--cta-color); /* Cor Ciano/Verde nos títulos dos planos */
+    color: var(--cta-color); /* Cor Ciano/Verde nos títulos dos planos (Plano Prata) */
     font-size: 1.8em;
 }
 
