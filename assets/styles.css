@@ -1,5 +1,5 @@
 /* ======================================================
-   ESTILOS GERAIS - TEMA ESCURO
+   ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
 ====================================================== */
 
 :root {
@@ -10,10 +10,8 @@
     --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
     --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
     
-    /* CORES DE AÇÃO: ELIMINANDO O CIANO */
-    --link-color: #9B59B6; /* Mantém o Roxo para links em texto */
-    
-    /* O CIANO ANTERIOR (#50E3C2) SERÁ SUBSTITUÍDO PELO AZUL VIBRANTE (#4A90E2) */
+    /* CORES DE AÇÃO: ELIMINANDO O CIANO E USANDO AZUL VIBRANTE */
+    --link-color: #9B59B6; /* Roxo para links em texto */
     --cta-color: var(--secondary-color); /* Agora usa o Azul Vibrante da logo nos botões */
     --cta-hover-color: #6aabf7; /* Um azul mais claro para o hover */
     
@@ -105,7 +103,7 @@ h3 { font-size: 1.5em; }
 }
 
 .primary-cta {
-    background-color: var(--cta-color);
+    background-color: var(--cta-color); /* Botão de destaque na nav usa o novo CTA color (Azul) */
     color: var(--primary-color) !important;
     padding: 8px 15px;
     border-radius: var(--border-radius);
@@ -179,7 +177,7 @@ section {
 
 .cta-main {
     display: inline-block;
-    background-color: var(--cta-color);
+    background-color: var(--cta-color); /* Botão principal usa o novo CTA color (Azul) */
     color: var(--primary-color) !important;
     padding: 15px 30px;
     border-radius: 50px;
@@ -253,7 +251,6 @@ section {
 .cta-whatsapp {
     background-color: #25D366; /* Verde WhatsApp */
     color: var(--text-color) !important;
-    /* CORREÇÃO AQUI: Afastamento do botão na página "Quem Somos" */
     margin-top: 40px; 
 }
 
@@ -381,7 +378,7 @@ section {
 }
 
 .plan-header h3 {
-    color: var(--cta-color);
+    color: var(--cta-color); /* Título do plano usa a cor CTA (Azul) */
     font-size: 1.8em;
 }
 
@@ -416,7 +413,7 @@ section {
 }
 
 .features-list li b {
-    color: var(--cta-color);
+    color: var(--cta-color); /* Destaque na lista usa a cor CTA (Azul) */
 }
 
 .cta-plan {
@@ -470,6 +467,17 @@ section {
     min-width: 300px;
     padding-right: 40px;
 }
+
+/* CORREÇÃO PARA AFASTAR O BOTÃO DO TEXTO */
+.about-content p {
+    margin-bottom: 20px; /* Garante uma margem padrão entre parágrafos */
+}
+
+.about-content p:last-of-type {
+    margin-bottom: 40px; /* AUMENTA A MARGEM ABAIXO DO ÚLTIMO PARÁGRAFO */
+}
+/* FIM DA CORREÇÃO */
+
 
 .about-image-placeholder {
     flex: 1;
