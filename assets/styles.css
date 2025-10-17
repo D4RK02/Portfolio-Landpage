@@ -2,17 +2,28 @@
    ESTILOS GERAIS - TEMA ESCURO
 ====================================================== */
 
+/* ======================================================
+   ESTILOS GERAIS - TEMA ESCURO (COM CORES ATUALIZADAS)
+====================================================== */
+
 :root {
-    --primary-color: #000; /* Preto para fundo */
-    --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
-    --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
+    --primary-color: #000; /* Preto Puro para fundo */
     --text-color: #fff; /* Texto branco padrão */
-    --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
     --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
-    --link-color: #9B59B6; /* Roxo para links em texto */
-    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação (Cor do botão de avaliação) */
-    --cta-hover-color: #2ED4B5; /* Ciano/Verde mais escuro */
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+    
+    /* ------------------------------------------------ */
+    /* NOVAS CORES DE DESTAQUE (ROXO/MAGENTA DA LOGO) */
+    /* ------------------------------------------------ */
+    
+    --secondary-color: #E91E63; /* NOVO MAGENTA VIBRANTE (Destaque Principal, Títulos, Card Popular) */
+    --cta-color: #9C27B0; /* NOVO ROXO VIBRANTE (Botões de Ação Principal) */
+    --cta-hover-color: #7B1FA2; /* Roxo mais escuro para hover */
+    --link-color: var(--secondary-color); /* Links em texto (usando o Magenta) */
+    --accent-color: #D0021B; /* Mantém o Vermelho/Pink para destaques como 'ribbon' (opcional) */
+    
+    /* Outros */
+    --light-gray: #f4f4f4; 
+    --shadow-color: rgba(0, 0, 0, 0.4); 
     --border-radius: 8px;
 }
 
