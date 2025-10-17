@@ -3,627 +3,623 @@
 ====================================================== */
 
 :root {
-    /* Cores atualizadas para Dark Mode e Branding Ethernos */
-    --primary-color: #4CAF50;    /* Verde (Ação) - Para botões (Contratar/CTA) */
-    --secondary-color: #00bcd4; /* Ciano/Azul Claro - Para links e destaque */
-    --text-dark: #eee;           /* Texto principal (Claro) */
-    --text-light: #1a1a1a;       /* Texto em fundos claros/botões */
-    --bg-deep-dark: #121212;     /* Fundo principal (Preto Profundo) */
-    --bg-dark: #1e1e1e;          /* Fundo de seções/cards */
-    
-    /* Gradiente da Logo Ethernos (Roxo para Azul Claro) */
-    --logo-gradient: linear-gradient(135deg, #a020f0, #00bfff); 
+    --primary-color: #000; /* Preto para fundo */
+    --secondary-color: #4A90E2; /* Azul vibrante (pode ser ajustado para um gradiente roxo/rosa se quiser harmonizar com a logo) */
+    --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
+    --text-color: #fff; /* Texto branco padrão */
+    --light-gray: #f4f4f4; /* Fundo de seção leve */
+    --dark-gray: #333; /* Fundo de footer e headers */
+    --link-color: #9B59B6; /* Roxo para links */
+    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação */
+    --cta-hover-color: #2ED4B5; /* Ciano/Verde mais escuro */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --border-radius: 8px;
+}
+
+/* Base Geral */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-deep-dark); 
-    color: var(--text-dark); 
+    color: var(--text-color);
+    background-color: var(--primary-color);
     line-height: 1.6;
-}
-
-h1, h2, h3 {
-    color: var(--text-dark);
+    overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
 a {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--link-color);
     transition: color 0.3s;
 }
 
 a:hover {
-    color: var(--primary-color);
+    color: var(--cta-color);
 }
 
-/* Botões CTA Genéricos */
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+/* Títulos */
+h1, h2, h3 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
 }
 
-.primary-cta {
-    background-color: var(--primary-color);
-    color: var(--text-light); 
-}
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
 
-.primary-cta:hover {
-    background-color: #388e3c; 
-}
-
-
-/* ======================================================
-   HEADER E NAVEGAÇÃO
-====================================================== */
-
+/* Header e Navegação */
 .main-header {
+    background-color: var(--dark-gray);
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%;
-    background-color: var(--bg-dark); 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5); 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo a {
     display: flex;
     align-items: center;
-    text-decoration: none;
+    color: var(--text-color);
 }
 
 .logo-img {
-    height: 30px; 
-    width: auto;
+    height: 40px;
     margin-right: 10px;
 }
 
-/* Estilo para o texto com Gradiente */
 .logo-text {
-    font-size: 1.4em;
-    font-weight: 700;
-    white-space: nowrap;
-    
-    background: var(--logo-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
+    font-weight: 600;
+    font-size: 1.1em;
 }
 
 .desktop-nav a {
+    color: var(--text-color);
     margin-left: 20px;
-    color: var(--text-dark);
+    padding: 5px 0;
+    font-weight: 500;
+    position: relative;
 }
 
 .desktop-nav a:hover {
     color: var(--secondary-color);
 }
 
+.primary-cta {
+    background-color: var(--cta-color);
+    color: var(--primary-color) !important;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+.primary-cta:hover {
+    background-color: var(--cta-hover-color);
+    color: var(--primary-color) !important;
+}
+
+/* Botão de Menu Mobile (Escondido no Desktop) */
 .mobile-menu-toggle {
-    display: none; 
+    display: none;
     background: none;
     border: none;
+    color: var(--text-color);
     font-size: 1.8em;
     cursor: pointer;
-    color: var(--primary-color);
 }
 
-/* CORREÇÃO: Garantir que .mobile-only esteja oculto no desktop
-    e .desktop-only esteja visível no desktop.
-*/
-.mobile-only {
-    display: none !important; /* Esconde por padrão no desktop */
-}
-.desktop-only {
-    display: inline-block !important; /* Mostra por padrão no desktop */
-}
-
-/* Esconder botão flutuante no desktop */
-.cta-mobile-fixed {
-    display: none;
-}
-
-
-/* ======================================================
-   SEÇÃO HERO (DESTAQUE)
-====================================================== */
-
-.hero-section {
-    padding: 60px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bg-deep-dark); 
-}
-
-.hero-content {
-    max-width: 50%;
-}
-
-.hero-content h1 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    color: #b0b0b0; 
-    margin-bottom: 30px;
-}
-
-.hero-image-placeholder {
-    width: 45%;
-    min-height: 300px;
-    background-color: transparent; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; 
-    border-radius: 8px;
-}
-
-.hero-gif {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-}
-
-/* Botão principal (desktop) - Corrigido para não quebrar a linha */
-.cta-main {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: var(--primary-color);
-    color: var(--text-light);
-    font-size: 1.1em;
-    font-weight: 700;
-    border-radius: 8px;
-    letter-spacing: 1px;
-    white-space: nowrap; 
-    box-shadow: 0 4px 6px rgba(76, 175, 80, 0.4);
-    margin-right: 15px; /* Espaço entre botões CTA na mesma linha */
-}
-
-.cta-main:hover {
-    background-color: #388e3c;
-}
-
-/* ======================================================
-   SEÇÃO SOLUÇÕES 
-====================================================== */
-
-.solutions-section {
-    padding: 60px 5%;
-    text-align: center; /* CORRIGIDO: Centralizar conteúdo da seção */
-    background-color: var(--bg-deep-dark);
-}
-
-.solutions-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.solution-card {
-    flex: 1;
-    max-width: 350px;
-    background-color: var(--bg-dark);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
-    overflow: hidden;
-    padding-bottom: 20px;
-}
-
-.solution-image {
-    height: 200px;
-    overflow: hidden;
-}
-
-.solution-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.solution-card:hover .solution-image img {
-    transform: scale(1.05); 
-}
-
-.solution-card h3 {
-    color: var(--secondary-color);
-    margin: 15px 0 10px;
-}
-
-.solution-card p {
-    padding: 0 15px;
-    font-size: 0.95em;
-    color: #b0b0b0;
-}
-
-
-/* ======================================================
-   SEÇÃO PORTFÓLIO E CONTATO (CORRIGIDO CENTRALIZAÇÃO)
-====================================================== */
-.portfolio-section,
-.contact-section {
-    padding: 60px 5%;
-    text-align: center; /* CORRIGIDO: Centralizar o conteúdo destas seções */
-    background-color: var(--bg-deep-dark);
-}
-
-.contact-section p {
-    max-width: 600px;
-    margin: 0 auto 30px auto; /* Centraliza o parágrafo */
-}
-
-
-/* ======================================================
-   SEÇÃO QUEM SOMOS
-====================================================== */
-
-.about-hero-section {
-    padding: 60px 5%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bg-dark); 
-}
-
-.about-content {
-    max-width: 50%;
-    padding-right: 30px;
-}
-
-.about-image-placeholder {
-    width: 45%;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.about-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-.services-detail-section {
+/* Seções Padrão */
+section {
     padding: 60px 5%;
     text-align: center;
 }
 
-.services-grid {
+/* SEÇÃO HERO */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 80px 5%;
+    text-align: left;
+    min-height: 80vh;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.15em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+.hero-image-placeholder {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-gif {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.cta-main {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-main:hover {
+    background-color: #6aabf7; /* Cor levemente mais clara */
+    transform: translateY(-2px);
+}
+
+.desktop-only { display: inline-block; }
+.mobile-only { display: none; }
+
+
+/* SEÇÃO SOLUÇÕES */
+.solutions-section {
+    background-color: var(--dark-gray);
+    padding-top: 40px;
+}
+
+.solutions-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr; /* Padrão de 1 coluna para mobile */
     gap: 30px;
     margin-top: 40px;
 }
 
-.service-item {
-    background-color: var(--bg-dark);
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 1px solid #333;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza o ícone e o título */
+.solution-card {
+    background-color: var(--primary-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* CORRIGIDO: Estilo para ícones Font Awesome na seção "Quem Somos" */
-.service-icon {
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4); /* Sombra com cor secundária */
+}
+
+.solution-image img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
     margin-bottom: 15px;
-    font-size: 3.5em; /* Aumenta o tamanho do ícone */
-    color: var(--secondary-color); /* Cor dos ícones Font Awesome */
-    display: flex; /* Garante que o ícone seja tratado como bloco flexível */
-    justify-content: center; /* Centraliza o ícone */
-    align-items: center; /* Centraliza o ícone */
-    height: 60px; /* Garante espaço para o ícone */
-    width: 60px; /* Garante espaço para o ícone */
 }
 
-.service-item h3 {
+.solution-card h3 {
     color: var(--secondary-color);
-    margin-top: 10px;
-    text-align: center;
-}
-
-.service-item p {
-    color: #b0b0b0;
-    font-size: 0.9em;
-    text-align: center;
+    margin-bottom: 10px;
 }
 
 
-/* ======================================================
-   RODAPÉ
-====================================================== */
+/* SEÇÃO PORTFÓLIO */
+.portfolio-section {
+    background-color: var(--primary-color);
+    padding-bottom: 40px;
+}
 
+/* SEÇÃO CONTATO */
+.contact-section {
+    background-color: var(--dark-gray);
+    padding: 40px 5%;
+}
+
+.cta-whatsapp {
+    background-color: #25D366; /* Verde WhatsApp */
+    margin-top: 20px;
+}
+
+.cta-whatsapp:hover {
+    background-color: #1DA84A;
+}
+
+/* Botão Fixo Mobile */
+.cta-mobile-fixed {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: var(--text-color);
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    transition: background-color 0.3s;
+}
+
+.cta-mobile-fixed i {
+    margin-right: 8px;
+}
+
+
+/* FOOTER */
 .main-footer {
+    background-color: var(--dark-gray);
+    color: #bbb;
     text-align: center;
     padding: 20px 5%;
-    background-color: var(--bg-dark);
-    color: #aaa;
+    border-top: 1px solid #444;
     font-size: 0.9em;
 }
 
-.social-links a {
-    color: #aaa;
+.main-footer a {
+    color: #bbb;
     margin: 0 10px;
 }
 
-
-/* ======================================================
-   RESPONSIVIDADE (MEDIA QUERIES)
-====================================================== */
-
-@media (max-width: 768px) {
-    
-    /* HEADER E NAVEGAÇÃO */
-    .desktop-nav {
-        display: none; 
-    }
-
-    .mobile-menu-toggle {
-        display: block; 
-    }
-    
-    /* CORREÇÃO: Botões Hero Section */
-    .desktop-only {
-        display: none !important; /* Esconde o botão desktop no mobile */
-    }
-
-    .mobile-only {
-        display: block !important; /* Mostra o botão mobile no mobile */
-        width: 100%; 
-        margin-top: 20px;
-        box-sizing: border-box; /* Garante que padding não estoure o layout */
-    }
-    
-    /* HERO SECTION */
-    .hero-section {
-        flex-direction: column; 
-        text-align: center;
-        padding-top: 40px;
-    }
-
-    .hero-content, .hero-image-placeholder {
-        max-width: 100%;
-        width: 100%;
-    }
-    
-    .hero-content {
-        order: 2; 
-    }
-
-    .hero-image-placeholder {
-        order: 1;
-        margin-bottom: 30px;
-        min-height: 200px;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8em;
-    }
-
-    /* SOLUÇÕES RESPONSIVAS */
-    .solutions-grid {
-        flex-direction: column; 
-        gap: 20px;
-    }
-
-    .solution-card {
-        max-width: 100%;
-    }
-    
-    .solution-image {
-        height: 180px; 
-    }
-    
-    /* QUEM SOMOS RESPONSIVO */
-    .about-hero-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .about-content {
-        max-width: 100%;
-        padding-right: 0;
-        margin-bottom: 30px;
-    }
-
-    .about-image-placeholder {
-        width: 100%;
-    }
-    
-    /* BOTÃO FLUTUANTE EXCLUSIVO PARA MOBILE (WhatsApp) */
-    .cta-mobile-fixed {
-        display: block !important; /* Garante que apareça no mobile */
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        
-        padding: 10px 15px;
-        background-color: var(--primary-color);
-        color: var(--text-light);
-        border-radius: 50px; 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-        font-weight: 600;
-        font-size: 1em;
-        line-height: 1.2;
-    }
-    
-    .cta-mobile-fixed i {
-        margin-right: 8px;
-        font-size: 1.3em;
-    }
+.main-footer a:hover {
+    color: var(--secondary-color);
 }
-/* ======================================================
-   ESTILOS ESPECÍFICOS DA PÁGINA PLANOS
-====================================================== */
 
-/* Container Principal dos Planos */
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS: PLANOS (planos.html) */
+/* ======================================================= */
+
 .plans-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 5%; /* Ajustado para seguir o padding geral */
-    text-align: center;
+    padding: 0;
 }
 
-/* Título de Seção */
+.plans-hero-section {
+    padding: 60px 5%;
+    background-color: var(--dark-gray);
+}
+
 .section-title {
-    font-size: 2em;
-    color: var(--text-dark);
-    margin: 40px 0 20px;
-    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
 }
 
-/* Layout em Grid para os Planos */
 .plans-grid {
-    display: grid;
-    /* Usa 3 colunas em desktop, responsivo com minmax */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
-    margin-top: 30px;
+    padding: 40px 5%;
 }
 
-/* Estilo do Card Individual */
 .plan-card {
-    background-color: var(--bg-dark); 
-    border-radius: 10px;
+    background-color: var(--dark-gray);
+    border: 1px solid #444;
+    border-radius: var(--border-radius);
     padding: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid #333;
-    transition: transform 0.3s ease;
-    position: relative; 
-    overflow: hidden; 
-    display: flex; /* Adiciona flex para alinhamento interno */
-    flex-direction: column;
-    justify-content: space-between;
+    width: 100%;
+    max-width: 350px; /* Limita a largura do card no desktop */
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .plan-card:hover {
     transform: translateY(-5px);
-    border-color: var(--secondary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* FAIXA "MAIS POPULAR" */
 .plan-card.popular {
-    border-color: var(--secondary-color); 
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.4);
 }
 
-.plan-card .ribbon {
+.ribbon {
     position: absolute;
-    top: 15px; /* Ajusta a posição da fita */
-    right: -30px; /* Puxa para fora do canto */
-    background-color: var(--secondary-color); 
-    color: var(--text-light);
-    padding: 5px 30px;
-    font-size: 0.85em;
+    top: 0;
+    right: 0;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    padding: 5px 15px;
+    font-size: 0.9em;
     font-weight: 700;
-    transform: rotate(45deg);
-    z-index: 10;
+    border-bottom-left-radius: var(--border-radius);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%);
 }
 
-/* Cabeçalho do Plano */
+.plan-header {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 .plan-header h3 {
+    color: var(--cta-color);
     font-size: 1.8em;
-    font-weight: 700;
-    margin-bottom: 5px;
-    background: var(--logo-gradient); /* Título com gradiente */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 }
 
+/* Correção de preço para planos */
 .price-full {
-    font-size: 1.2em;
-    color: #888;
+    font-size: 0.9em;
+    color: #bbb;
     text-decoration: line-through;
-    margin: 0;
+    margin-bottom: 5px;
 }
 
 .price-monthly {
     font-size: 2.2em;
+    color: var(--text-color);
     font-weight: 700;
-    color: var(--primary-color); /* Destaque o preço com a cor primária */
-    margin: 5px 0 20px;
 }
 
-/* Lista de Recursos */
 .features-list {
     list-style: none;
-    padding: 0;
-    text-align: left;
+    padding-left: 0;
     margin-bottom: 30px;
-    flex-grow: 1; /* Garante que a lista preencha o espaço entre o cabeçalho e o botão */
 }
 
 .features-list li {
     padding: 10px 0;
-    border-bottom: 1px dashed #333;
-    color: var(--text-dark);
-    font-size: 1em;
+    border-bottom: 1px dashed #555;
+    color: #ccc;
+    font-size: 0.95em;
 }
 
 .features-list li:last-child {
     border-bottom: none;
 }
 
-/* Destaque para o texto em <strong> */
-.features-list strong {
-    color: var(--secondary-color); 
+.features-list li b {
+    color: var(--cta-color);
 }
 
-/* Botões CTA dos Planos */
 .cta-plan {
     display: block;
-    padding: 12px;
-    border-radius: 5px;
-    text-decoration: none;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color) !important;
+    padding: 12px 20px;
+    border-radius: var(--border-radius);
     font-weight: 600;
-    margin-top: 20px;
     transition: background-color 0.3s;
-    background-color: var(--primary-color);
-    color: var(--text-light);
 }
 
 .cta-plan:hover {
-    background-color: #388e3c;
+    background-color: #6aabf7;
 }
 
-/* Cores específicas para os botões Ouro e Platinum (se desejar diferenciar) */
 .cta-gold {
-    background-color: var(--secondary-color);
-}
-.cta-gold:hover {
-    background-color: #0097a7;
-}
-.cta-platinum {
-    /* Usando um gradiente de destaque ou uma cor forte */
-    background: linear-gradient(90deg, #a020f0, #e30752); 
-    color: white;
-}
-.cta-platinum:hover {
-    background: linear-gradient(90deg, #8a1cb5, #c90647);
+    background-color: #FFB700; /* Dourado */
+    color: var(--dark-gray) !important;
 }
 
-/* RESPONSIVIDADE ADICIONAL PARA MOBILE (Seção Planos) */
-@media (max-width: 768px) {
-    .plans-grid {
-        /* No mobile, as colunas se empilham */
-        grid-template-columns: 1fr;
+.cta-gold:hover {
+    background-color: #FFC947;
+}
+
+.cta-platinum {
+    background-color: #9B59B6; /* Roxo */
+    color: var(--text-color) !important;
+}
+
+.cta-platinum:hover {
+    background-color: #AE7AC7;
+}
+
+/* ======================================================= */
+/* ESTILOS ESPECÍFICOS: QUEM SOMOS (quem-somos.html) */
+/* ======================================================= */
+
+.about-hero-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 80px 5%;
+    text-align: left;
+}
+
+.about-content {
+    flex: 2;
+    min-width: 300px;
+    padding-right: 40px;
+}
+
+.about-image-placeholder {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.services-detail-section {
+    background-color: var(--dark-gray);
+}
+
+/* GRID DE SERVIÇOS DETALHADOS - Quem Somos */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Padrão de 1 coluna para mobile */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    background-color: var(--primary-color);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3em;
+    color: var(--cta-color);
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    color: #ccc;
+    font-size: 0.95em;
+}
+
+
+/* ======================================================= */
+/* MEDIA QUERIES (Responsividade) */
+/* ======================================================= */
+
+/* Telas de Tablet (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+    .logo-text { font-size: 1em; }
+    .hero-content { padding-right: 20px; }
+    .hero-content h1 { font-size: 2.5em; }
+    
+    .desktop-only { display: none; }
+    .mobile-only { display: inline-block; }
+    
+    .cta-mobile-fixed {
+        display: block; /* Mostra o botão flutuante */
+        left: 20px;
+        right: auto;
     }
+
+    /* 2 COLUNAS PARA GRIDS DE SOLUÇÕES/SERVIÇOS */
+    .solutions-grid, .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Planos: Permite 2 colunas */
+    .plans-grid {
+        justify-content: space-around;
+        gap: 20px;
+    }
+    .plan-card {
+        max-width: 45%;
+    }
+}
+
+
+/* Telas de Desktop (1024px e acima) */
+@media (min-width: 1024px) {
+    
+    .hero-content h1 { font-size: 3.5em; }
+    .hero-section { padding: 100px 5%; }
+
+    /* 3 COLUNAS PARA GRIDS DE SOLUÇÕES/SERVIÇOS (Ajuste crucial) */
+    .solutions-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 40px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 30px;
+    }
+
+    /* Planos: Força 3 colunas para a grade de planos */
+    .plans-grid {
+        justify-content: center;
+        gap: 30px;
+    }
+    .plan-card {
+        max-width: 300px;
+    }
+    
+    /* Garante que o menu mobile esteja escondido */
+    .mobile-menu-toggle { display: none; }
+    .desktop-nav { display: flex !important; } /* Garante que o menu desktop aparece */
+    
+    .cta-mobile-fixed { display: none; } /* Esconde o botão flutuante no desktop */
+}
+
+
+/* Telas Pequenas (Mobile: até 767px) */
+@media (max-width: 767px) {
+    
+    .main-header { padding: 10px 5%; }
+    .logo-text { display: none; } /* Esconde texto da logo para economizar espaço */
+    
+    .desktop-nav { display: none; } /* Esconde o menu desktop */
+    .mobile-menu-toggle { display: block; } /* Mostra o botão de menu */
+    
+    /* Menu Aberto (opcional, requer JavaScript) */
+    .desktop-nav.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--dark-gray);
+        box-shadow: 0 5px 5px var(--shadow-color);
+        padding: 10px 0;
+    }
+    .desktop-nav.active a {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .hero-section, .about-hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+    }
+    
+    .hero-content, .about-content {
+        padding-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .hero-content h1 { font-size: 2em; }
+    
+    .desktop-only { display: none; }
+    .mobile-only { display: inline-block; }
+    
+    .plans-grid {
+        padding: 20px 5%;
+    }
+    
+    .plan-card {
+        max-width: 100%; /* Ocupa a largura total no mobile */
+    }
+
+    .cta-mobile-fixed { display: block; } /* Mostra o botão flutuante */
 }
