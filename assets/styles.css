@@ -2,6 +2,10 @@
    ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
 ====================================================== */
 
+/* ======================================================
+   ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
+====================================================== */
+
 :root {
     --primary-color: #000; /* Preto para fundo */
     --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
@@ -85,12 +89,9 @@ h3 { font-size: 1.5em; }
     margin-right: 10px;
 }
 
-/* CORREÇÃO APLICADA: Garante que o texto seja visível no desktop (regra mobile ESCONDE) */
 .logo-text {
     font-weight: 600;
     font-size: 1.1em;
-    display: block; /* Garante que o texto é exibido no desktop */
-    white-space: nowrap; /* Evita quebra de linha no nome */
 }
 
 .desktop-nav a {
@@ -263,13 +264,6 @@ section {
 .portfolio-section {
     background-color: var(--primary-color);
     padding-bottom: 40px;
-}
-
-/* CORREÇÃO APLICADA: Nova classe para o container de card único na Home */
-.portfolio-single-card-container {
-    display: flex; /* Usa flexbox */
-    justify-content: center; /* Centraliza o item filho (plan-card) */
-    padding: 0 5%; /* Mantém o padding da seção para alinhamento */
 }
 
 /* SEÇÃO CONTATO */
@@ -647,9 +641,7 @@ section {
 @media (max-width: 767px) {
     
     .main-header { padding: 10px 5%; }
-    
-    /* A regra de esconder o texto da logo no mobile já estava aqui, garantindo que a regra principal funcione no desktop */
-    .logo-text { display: none; } 
+    .logo-text { display: none; }
     
     .desktop-nav { display: none; }
     .mobile-menu-toggle { display: block; }
