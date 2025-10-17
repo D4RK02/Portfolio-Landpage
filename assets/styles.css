@@ -696,8 +696,21 @@ section {
     .cta-mobile-fixed { display: block; }
 }
 
+/* assets/styles.css */
+
+/* ... Código CSS anterior ... */
+
+/* Centraliza o container na Home (index.html) */
 .portfolio-single-card-container {
-    display: flex; /* Habilita o Flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
-    /* Garante que o item filho com 'margin: auto' centralize */
+    display: flex; /* Transforma o container em Flex */
+    justify-content: center; /* Centraliza horizontalmente o item filho */
+    /* Remove qualquer padding ou margin que possa estar empurrando o conteúdo */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Garante que o card dentro deste container não tenha margens indesejadas */
+.portfolio-single-card-container .plan-card {
+    max-width: 400px;
+    margin: 20px; /* Ou o margin que você quiser, mas não use 'auto' aqui se o Flexbox já está centralizando */
 }
