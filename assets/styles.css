@@ -3,17 +3,16 @@
 ====================================================== */
 
 :root {
-    /* Mantenho as variáveis de cor, mas o foco não é alterá-las */
-    --primary-color: #000;
-    --secondary-color: #4A90E2;
-    --accent-color: #D0021B;
-    --text-color: #fff;
-    --light-gray: #f4f4f4;
-    --dark-gray: #1a1a1a;
-    --link-color: #9B59B6;
-    --cta-color: #50E3C2;
-    --cta-hover-color: #2ED4B5;
-    --shadow-color: rgba(0, 0, 0, 0.4);
+    --primary-color: #000; /* Preto para fundo */
+    --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
+    --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
+    --text-color: #fff; /* Texto branco padrão */
+    --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
+    --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
+    --link-color: #9B59B6; /* Roxo para links em texto */
+    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação (Cor do botão de avaliação) */
+    --cta-hover-color: #2ED4B5; /* Ciano/Verde mais escuro */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
     --border-radius: 8px;
 }
 
@@ -47,7 +46,7 @@ h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 0.5em;
     line-height: 1.2;
-    color: var(--text-color); /* Mantém branco, conforme sua estética */
+    color: var(--text-color);
 }
 
 h1 { font-size: 2.5em; }
@@ -102,7 +101,7 @@ h3 { font-size: 1.5em; }
 
 .primary-cta {
     background-color: var(--cta-color);
-    color: var(--primary-color) !important; /* Mantido para garantir cor do texto do botão */
+    color: var(--primary-color) !important;
     padding: 8px 15px;
     border-radius: var(--border-radius);
     transition: background-color 0.3s;
@@ -247,9 +246,10 @@ section {
 }
 
 .cta-whatsapp {
-    background-color: #25D366;
+    background-color: #25D366; /* Verde WhatsApp */
     color: var(--text-color) !important;
-    margin-top: 20px;
+    /* CORREÇÃO AQUI: Afastamento do botão na página "Quem Somos" */
+    margin-top: 40px; 
 }
 
 .cta-whatsapp:hover {
@@ -311,13 +311,13 @@ section {
 }
 
 /* CORREÇÃO: Alinhamento e espaçamento dos títulos de modalidade */
-.plans-container h2 { /* Targeting h2s dentro de plans-container */
-    color: var(--secondary-color); /* Mantém a cor azul/roxo */
-    text-align: center; /* Centraliza o título */
-    margin-top: 60px; /* Mais espaço acima para separar da seção anterior */
-    margin-bottom: 30px; /* Espaço abaixo para separar dos cards */
-    font-size: 2.2em; /* Tamanho levemente maior para destaque */
-    padding: 0 5%; /* Adiciona padding lateral para não colar nas bordas */
+.plans-container h2 { 
+    color: var(--secondary-color);
+    text-align: center;
+    margin-top: 60px; 
+    margin-bottom: 30px; 
+    font-size: 2.2em; 
+    padding: 0 5%;
 }
 
 /* Garante que o título principal da seção de planos ainda seja branco */
@@ -330,7 +330,7 @@ section {
     background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centraliza os cards */
+    justify-content: center;
     gap: 30px;
     padding: 40px 5%;
 }
@@ -513,14 +513,14 @@ section {
 }
 
 /* CORREÇÃO: Alinhamento do parágrafo da seção "Nossos Pilares" */
-.contact-section p { /* Esta seção no HTML quem-somos.html é usada para "Nossos Pilares" */
-    max-width: 900px; /* Aumenta a largura máxima do parágrafo */
-    margin: 20px auto 0 auto; /* Centraliza o parágrafo horizontalmente com margens automáticas */
-    text-align: left; /* Mantém o texto alinhado à esquerda dentro do bloco */
-    color: #ccc; /* Mantém a cor do texto */
+.contact-section p { 
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+    text-align: left;
+    color: #ccc;
 }
 .contact-section h2 {
-    margin-bottom: 20px; /* Garante espaçamento abaixo do título */
+    margin-bottom: 20px;
 }
 
 
