@@ -4,19 +4,19 @@
 
 :root {
     --primary-color: #000; /* Preto para fundo */
-    --secondary-color: #4A90E2; /* Azul vibrante (pode ser ajustado para um gradiente roxo/rosa se quiser harmonizar com a logo) */
+    --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
     --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
     --text-color: #fff; /* Texto branco padrão */
-    --light-gray: #f4f4f4; /* Fundo de seção leve */
-    --dark-gray: #333; /* Fundo de footer e headers */
-    --link-color: #9B59B6; /* Roxo para links */
-    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação */
+    --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
+    --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
+    --link-color: #9B59B6; /* Roxo para links em texto */
+    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação (Cor do botão de avaliação) */
     --cta-hover-color: #2ED4B5; /* Ciano/Verde mais escuro */
-    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
     --border-radius: 8px;
 }
 
-/* Base Geral */
+/* Base Geral (FALLBACK DE FUNDO) */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,9 +26,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Garante o fundo preto */
     line-height: 1.6;
-    overflow-x: hidden; /* Evita rolagem horizontal */
+    overflow-x: hidden;
 }
 
 a {
@@ -52,9 +52,9 @@ h1 { font-size: 2.5em; }
 h2 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 
-/* Header e Navegação */
+/* Header e Navegação (FALLBACK DE FUNDO E TEXTO) */
 .main-header {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Garante fundo escuro */
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -121,10 +121,11 @@ h3 { font-size: 1.5em; }
     cursor: pointer;
 }
 
-/* Seções Padrão */
+/* Seções Padrão (FALLBACK DE FUNDO) */
 section {
     padding: 60px 5%;
     text-align: center;
+    background-color: var(--primary-color); /* Fallback de cor para todas as seções */
 }
 
 /* SEÇÃO HERO */
@@ -135,6 +136,7 @@ section {
     padding: 80px 5%;
     text-align: left;
     min-height: 80vh;
+    background-color: var(--primary-color); /* Garante fundo preto */
 }
 
 .hero-content {
@@ -171,8 +173,8 @@ section {
 
 .cta-main {
     display: inline-block;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    background-color: var(--cta-color); /* Usando a cor ciano/verde dos botões de avaliação */
+    color: var(--primary-color) !important;
     padding: 15px 30px;
     border-radius: 50px;
     font-weight: 600;
@@ -181,7 +183,7 @@ section {
 }
 
 .cta-main:hover {
-    background-color: #6aabf7; /* Cor levemente mais clara */
+    background-color: var(--cta-hover-color);
     transform: translateY(-2px);
 }
 
@@ -191,7 +193,7 @@ section {
 
 /* SEÇÃO SOLUÇÕES */
 .solutions-section {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Garante fundo cinza escuro nos cards */
     padding-top: 40px;
 }
 
@@ -203,7 +205,7 @@ section {
 }
 
 .solution-card {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Fundo preto nos cards */
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -213,7 +215,7 @@ section {
 
 .solution-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4); /* Sombra com cor secundária */
+    box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
 }
 
 .solution-image img {
@@ -225,25 +227,26 @@ section {
 }
 
 .solution-card h3 {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Azul Vibrante nos títulos */
     margin-bottom: 10px;
 }
 
 
 /* SEÇÃO PORTFÓLIO */
 .portfolio-section {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Fundo preto */
     padding-bottom: 40px;
 }
 
 /* SEÇÃO CONTATO */
 .contact-section {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Fundo cinza escuro */
     padding: 40px 5%;
 }
 
 .cta-whatsapp {
     background-color: #25D366; /* Verde WhatsApp */
+    color: var(--text-color) !important;
     margin-top: 20px;
 }
 
@@ -272,9 +275,9 @@ section {
 }
 
 
-/* FOOTER */
+/* FOOTER (FALLBACK DE FUNDO) */
 .main-footer {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Garante fundo cinza escuro */
     color: #bbb;
     text-align: center;
     padding: 20px 5%;
@@ -297,11 +300,12 @@ section {
 
 .plans-container {
     padding: 0;
+    background-color: var(--primary-color); /* Garante fundo preto */
 }
 
 .plans-hero-section {
     padding: 60px 5%;
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Fundo cinza escuro no Hero de Planos */
 }
 
 .section-title {
@@ -316,15 +320,16 @@ section {
     justify-content: center;
     gap: 30px;
     padding: 40px 5%;
+    background-color: var(--primary-color); /* Garante fundo preto na área da grade */
 }
 
 .plan-card {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Fundo dos cards de plano */
     border: 1px solid #444;
     border-radius: var(--border-radius);
     padding: 30px;
     width: 100%;
-    max-width: 350px; /* Limita a largura do card no desktop */
+    max-width: 350px;
     text-align: left;
     position: relative;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -359,7 +364,7 @@ section {
 }
 
 .plan-header h3 {
-    color: var(--cta-color);
+    color: var(--cta-color); /* Cor Ciano/Verde nos títulos dos planos */
     font-size: 1.8em;
 }
 
@@ -395,7 +400,7 @@ section {
 }
 
 .features-list li b {
-    color: var(--cta-color);
+    color: var(--cta-color); /* Cor Ciano/Verde nos destaques das features */
 }
 
 .cta-plan {
@@ -441,6 +446,7 @@ section {
     align-items: center;
     padding: 80px 5%;
     text-align: left;
+    background-color: var(--primary-color); /* Fundo preto */
 }
 
 .about-content {
@@ -465,19 +471,19 @@ section {
 }
 
 .services-detail-section {
-    background-color: var(--dark-gray);
+    background-color: var(--dark-gray); /* Fundo cinza escuro para a seção de serviços */
 }
 
 /* GRID DE SERVIÇOS DETALHADOS - Quem Somos */
 .services-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Padrão de 1 coluna para mobile */
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 40px;
 }
 
 .service-item {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Fundo preto nos cards */
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -486,18 +492,13 @@ section {
 
 .service-icon {
     font-size: 3em;
-    color: var(--cta-color);
+    color: var(--secondary-color); /* Azul Vibrante nos ícones */
     margin-bottom: 15px;
 }
 
 .service-item h3 {
-    color: var(--secondary-color);
+    color: var(--cta-color); /* Cor Ciano/Verde nos títulos de serviço */
     margin-bottom: 10px;
-}
-
-.service-item p {
-    color: #ccc;
-    font-size: 0.95em;
 }
 
 
@@ -537,13 +538,13 @@ section {
 }
 
 
-/* Telas de Desktop (1024px e acima) */
+/* Telas de Desktop (1024px e acima) - 3 COLUNAS GARANTIDAS */
 @media (min-width: 1024px) {
     
     .hero-content h1 { font-size: 3.5em; }
     .hero-section { padding: 100px 5%; }
 
-    /* 3 COLUNAS PARA GRIDS DE SOLUÇÕES/SERVIÇOS (Ajuste crucial) */
+    /* 3 COLUNAS PARA GRIDS DE SOLUÇÕES/SERVIÇOS */
     .solutions-grid {
         grid-template-columns: repeat(3, 1fr); 
         gap: 40px;
