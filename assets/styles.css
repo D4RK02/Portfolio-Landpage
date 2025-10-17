@@ -3,20 +3,21 @@
 ====================================================== */
 
 :root {
-    --primary-color: #000; /* Preto para fundo */
-    --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
-    --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
-    --text-color: #fff; /* Texto branco padrão */
-    --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
-    --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
-    --link-color: #9B59B6; /* Roxo para links em texto */
-    --cta-color: #50E3C2; /* Ciano/Verde para botões de ação (Cor do botão de avaliação) */
-    --cta-hover-color: #2ED4B5; /* Ciano/Verde mais escuro */
-    --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
+    /* Mantenho as variáveis de cor, mas o foco não é alterá-las */
+    --primary-color: #000;
+    --secondary-color: #4A90E2;
+    --accent-color: #D0021B;
+    --text-color: #fff;
+    --light-gray: #f4f4f4;
+    --dark-gray: #1a1a1a;
+    --link-color: #9B59B6;
+    --cta-color: #50E3C2;
+    --cta-hover-color: #2ED4B5;
+    --shadow-color: rgba(0, 0, 0, 0.4);
     --border-radius: 8px;
 }
 
-/* Base Geral (CORREÇÃO DE FUNDO E TEXTO SEM FORÇAR DEMAIS) */
+/* Base Geral */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,7 +27,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: var(--text-color);
-    background-color: var(--primary-color); /* Fundo preto base */
+    background-color: var(--primary-color);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -46,7 +47,7 @@ h1, h2, h3 {
     font-weight: 700;
     margin-bottom: 0.5em;
     line-height: 1.2;
-    color: var(--text-color);
+    color: var(--text-color); /* Mantém branco, conforme sua estética */
 }
 
 h1 { font-size: 2.5em; }
@@ -55,7 +56,7 @@ h3 { font-size: 1.5em; }
 
 /* Header e Navegação */
 .main-header {
-    background-color: var(--dark-gray); /* Fundo cinza escuro no cabeçalho */
+    background-color: var(--dark-gray);
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
@@ -101,7 +102,7 @@ h3 { font-size: 1.5em; }
 
 .primary-cta {
     background-color: var(--cta-color);
-    color: var(--primary-color) !important;
+    color: var(--primary-color) !important; /* Mantido para garantir cor do texto do botão */
     padding: 8px 15px;
     border-radius: var(--border-radius);
     transition: background-color 0.3s;
@@ -126,7 +127,7 @@ h3 { font-size: 1.5em; }
 section {
     padding: 60px 5%;
     text-align: center;
-    background-color: var(--primary-color); /* Fundo preto padrão */
+    background-color: var(--primary-color);
 }
 
 /* SEÇÃO HERO */
@@ -194,19 +195,19 @@ section {
 
 /* SEÇÃO SOLUÇÕES */
 .solutions-section {
-    background-color: var(--dark-gray); /* Fundo cinza escuro para a área de cards */
+    background-color: var(--dark-gray);
     padding-top: 40px;
 }
 
 .solutions-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Padrão de 1 coluna para mobile */
+    grid-template-columns: 1fr;
     gap: 30px;
     margin-top: 40px;
 }
 
 .solution-card {
-    background-color: var(--primary-color); /* Fundo preto nos cards */
+    background-color: var(--primary-color);
     padding: 20px;
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -228,25 +229,25 @@ section {
 }
 
 .solution-card h3 {
-    color: var(--secondary-color); /* Azul Vibrante nos títulos dos cards */
+    color: var(--secondary-color);
     margin-bottom: 10px;
 }
 
 
 /* SEÇÃO PORTFÓLIO */
 .portfolio-section {
-    background-color: var(--primary-color); /* Fundo preto */
+    background-color: var(--primary-color);
     padding-bottom: 40px;
 }
 
 /* SEÇÃO CONTATO */
 .contact-section {
-    background-color: var(--dark-gray); /* Fundo cinza escuro */
+    background-color: var(--dark-gray);
     padding: 40px 5%;
 }
 
 .cta-whatsapp {
-    background-color: #25D366; /* Verde WhatsApp */
+    background-color: #25D366;
     color: var(--text-color) !important;
     margin-top: 20px;
 }
@@ -278,7 +279,7 @@ section {
 
 /* FOOTER */
 .main-footer {
-    background-color: var(--dark-gray); /* Fundo cinza escuro */
+    background-color: var(--dark-gray);
     color: #bbb;
     text-align: center;
     padding: 20px 5%;
@@ -301,31 +302,41 @@ section {
 
 .plans-container {
     padding: 0;
-    background-color: var(--primary-color); /* Fundo preto base */
+    background-color: var(--primary-color);
 }
 
 .plans-hero-section {
     padding: 60px 5%;
-    background-color: var(--dark-gray); /* Fundo cinza escuro no Hero de Planos */
+    background-color: var(--dark-gray);
 }
 
-.section-title {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
+/* CORREÇÃO: Alinhamento e espaçamento dos títulos de modalidade */
+.plans-container h2 { /* Targeting h2s dentro de plans-container */
+    color: var(--secondary-color); /* Mantém a cor azul/roxo */
+    text-align: center; /* Centraliza o título */
+    margin-top: 60px; /* Mais espaço acima para separar da seção anterior */
+    margin-bottom: 30px; /* Espaço abaixo para separar dos cards */
+    font-size: 2.2em; /* Tamanho levemente maior para destaque */
+    padding: 0 5%; /* Adiciona padding lateral para não colar nas bordas */
 }
+
+/* Garante que o título principal da seção de planos ainda seja branco */
+.plans-hero-section h1 {
+    color: var(--text-color); 
+}
+
 
 .plans-grid {
-    background-color: var(--primary-color); /* Fundo preto na área da grade */
+    background-color: var(--primary-color);
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; /* Centraliza os cards */
     gap: 30px;
     padding: 40px 5%;
 }
 
 .plan-card {
-    background-color: var(--dark-gray); /* Fundo dos cards de plano */
+    background-color: var(--dark-gray);
     border: 1px solid #444;
     border-radius: var(--border-radius);
     padding: 30px;
@@ -365,11 +376,10 @@ section {
 }
 
 .plan-header h3 {
-    color: var(--cta-color); /* Cor Ciano/Verde nos títulos dos planos (Plano Prata) */
+    color: var(--cta-color);
     font-size: 1.8em;
 }
 
-/* Correção de preço para planos */
 .price-full {
     font-size: 0.9em;
     color: #bbb;
@@ -401,7 +411,7 @@ section {
 }
 
 .features-list li b {
-    color: var(--cta-color); /* Cor Ciano/Verde nos destaques das features */
+    color: var(--cta-color);
 }
 
 .cta-plan {
@@ -420,7 +430,7 @@ section {
 }
 
 .cta-gold {
-    background-color: #FFB700; /* Dourado */
+    background-color: #FFB700;
     color: var(--dark-gray) !important;
 }
 
@@ -429,7 +439,7 @@ section {
 }
 
 .cta-platinum {
-    background-color: #9B59B6; /* Roxo */
+    background-color: #9B59B6;
     color: var(--text-color) !important;
 }
 
@@ -447,7 +457,7 @@ section {
     align-items: center;
     padding: 80px 5%;
     text-align: left;
-    background-color: var(--primary-color); /* Fundo preto */
+    background-color: var(--primary-color);
 }
 
 .about-content {
@@ -472,7 +482,7 @@ section {
 }
 
 .services-detail-section {
-    background-color: var(--dark-gray); /* Fundo cinza escuro para a seção de serviços */
+    background-color: var(--dark-gray);
 }
 
 /* GRID DE SERVIÇOS DETALHADOS - Quem Somos */
@@ -484,7 +494,7 @@ section {
 }
 
 .service-item {
-    background-color: var(--primary-color); /* Fundo preto nos cards */
+    background-color: var(--primary-color);
     padding: 25px;
     border-radius: var(--border-radius);
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -493,13 +503,24 @@ section {
 
 .service-icon {
     font-size: 3em;
-    color: var(--secondary-color); /* Azul Vibrante nos ícones */
+    color: var(--secondary-color);
     margin-bottom: 15px;
 }
 
 .service-item h3 {
-    color: var(--cta-color); /* Cor Ciano/Verde nos títulos de serviço */
+    color: var(--cta-color);
     margin-bottom: 10px;
+}
+
+/* CORREÇÃO: Alinhamento do parágrafo da seção "Nossos Pilares" */
+.contact-section p { /* Esta seção no HTML quem-somos.html é usada para "Nossos Pilares" */
+    max-width: 900px; /* Aumenta a largura máxima do parágrafo */
+    margin: 20px auto 0 auto; /* Centraliza o parágrafo horizontalmente com margens automáticas */
+    text-align: left; /* Mantém o texto alinhado à esquerda dentro do bloco */
+    color: #ccc; /* Mantém a cor do texto */
+}
+.contact-section h2 {
+    margin-bottom: 20px; /* Garante espaçamento abaixo do título */
 }
 
 
@@ -518,7 +539,7 @@ section {
     .mobile-only { display: inline-block; }
     
     .cta-mobile-fixed {
-        display: block; /* Mostra o botão flutuante */
+        display: block;
         left: 20px;
         right: auto;
     }
@@ -535,6 +556,13 @@ section {
     }
     .plan-card {
         max-width: 45%;
+    }
+
+    /* Ajuste para títulos de modalidade em tablet */
+    .plans-container h2 {
+        font-size: 1.8em;
+        margin-top: 40px;
+        margin-bottom: 25px;
     }
 }
 
@@ -565,11 +593,10 @@ section {
         max-width: 300px;
     }
     
-    /* Garante que o menu mobile esteja escondido */
     .mobile-menu-toggle { display: none; }
-    .desktop-nav { display: flex !important; } /* Garante que o menu desktop aparece */
+    .desktop-nav { display: flex !important; }
     
-    .cta-mobile-fixed { display: none; } /* Esconde o botão flutuante no desktop */
+    .cta-mobile-fixed { display: none; }
 }
 
 
@@ -577,17 +604,16 @@ section {
 @media (max-width: 767px) {
     
     .main-header { padding: 10px 5%; }
-    .logo-text { display: none; } /* Esconde texto da logo para economizar espaço */
+    .logo-text { display: none; }
     
-    .desktop-nav { display: none; } /* Esconde o menu desktop */
-    .mobile-menu-toggle { display: block; } /* Mostra o botão de menu */
+    .desktop-nav { display: none; }
+    .mobile-menu-toggle { display: block; }
     
-    /* Menu Aberto (opcional, requer JavaScript) */
     .desktop-nav.active {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 60px; /* Abaixo do header */
+        top: 60px;
         left: 0;
         width: 100%;
         background-color: var(--dark-gray);
@@ -620,8 +646,15 @@ section {
     }
     
     .plan-card {
-        max-width: 100%; /* Ocupa a largura total no mobile */
+        max-width: 100%;
     }
 
-    .cta-mobile-fixed { display: block; } /* Mostra o botão flutuante */
+    /* Ajuste para títulos de modalidade em mobile */
+    .plans-container h2 {
+        font-size: 1.6em;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .cta-mobile-fixed { display: block; }
 }
