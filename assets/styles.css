@@ -2,10 +2,6 @@
    ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
 ====================================================== */
 
-/* ======================================================
-   ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
-====================================================== */
-
 :root {
     --primary-color: #000; /* Preto para fundo */
     --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
@@ -89,9 +85,12 @@ h3 { font-size: 1.5em; }
     margin-right: 10px;
 }
 
+/* CORREÇÃO APLICADA: Garante que o texto Ethernos apareça e flua ao lado da logo no desktop */
 .logo-text {
     font-weight: 600;
     font-size: 1.1em;
+    display: inline-block; 
+    white-space: nowrap;
 }
 
 .desktop-nav a {
@@ -100,7 +99,6 @@ h3 { font-size: 1.5em; }
     padding: 5px 0;
     font-weight: 500;
     position: relative;
-    /* Adicionada transição para o estado ativo */
     transition: color 0.3s, background-color 0.3s, padding 0.3s;
 }
 
@@ -109,11 +107,10 @@ h3 { font-size: 1.5em; }
 }
 
 .primary-cta {
-    /* Ajustado para ser mais amplo e arredondado */
     background-color: var(--cta-color); 
     color: var(--primary-color) !important;
-    padding: 10px 18px; /* Aumentado */
-    border-radius: 12px; /* Aumentado */
+    padding: 10px 18px;
+    border-radius: 12px;
     transition: background-color 0.3s;
     font-weight: 600;
 }
@@ -265,6 +262,14 @@ section {
     background-color: var(--primary-color);
     padding-bottom: 40px;
 }
+
+/* CORREÇÃO APLICADA: Container para centralizar o card único de portfólio na Home */
+.portfolio-single-card-container {
+    display: flex; 
+    justify-content: center; 
+    padding: 0 5%;
+}
+
 
 /* SEÇÃO CONTATO */
 .contact-section {
@@ -631,7 +636,12 @@ section {
     }
     
     .mobile-menu-toggle { display: none; }
-    .desktop-nav { display: flex !important; }
+    
+    /* CORREÇÃO APLICADA: Garante que o menu desktop seja exibido corretamente */
+    .desktop-nav { 
+        display: flex !important;
+        align-items: center; /* Alinha os itens da navegação */
+    }
     
     .cta-mobile-fixed { display: none; }
 }
@@ -641,7 +651,8 @@ section {
 @media (max-width: 767px) {
     
     .main-header { padding: 10px 5%; }
-    .logo-text { display: none; }
+    
+    .logo-text { display: none; } 
     
     .desktop-nav { display: none; }
     .mobile-menu-toggle { display: block; }
