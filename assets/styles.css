@@ -420,6 +420,13 @@ section {
 .price-full {
     font-size: 0.9em;
     color: #bbb;
+    /* text-decoration: line-through; */
+    margin-bottom: 5px;
+}
+
+.price-old {
+    font-size: 0.9em;
+    color: #bbb;
     text-decoration: line-through;
     margin-bottom: 5px;
 }
