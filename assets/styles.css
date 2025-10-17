@@ -695,3 +695,9 @@ section {
 
     .cta-mobile-fixed { display: block; }
 }
+
+.portfolio-single-card-container {
+    display: flex; /* Habilita o Flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    /* Garante que o item filho com 'margin: auto' centralize */
+}
