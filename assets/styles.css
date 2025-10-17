@@ -2,28 +2,22 @@
    ESTILOS GERAIS - TEMA ESCURO
 ====================================================== */
 
-/* ======================================================
-   ESTILOS GERAIS - TEMA ESCURO (COM CORES ATUALIZADAS)
-====================================================== */
-
 :root {
-    --primary-color: #000; /* Preto Puro para fundo */
+    --primary-color: #000; /* Preto para fundo */
+    --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
+    --accent-color: #D0021B; /* Vermelho/Pink para destaques (ex: ribbon) */
     --text-color: #fff; /* Texto branco padrão */
+    --light-gray: #f4f4f4; /* Fundo de seção leve (quase não usado) */
     --dark-gray: #1a1a1a; /* Fundo de header, footer e cards (cinza escuro) */
     
-    /* ------------------------------------------------ */
-    /* NOVAS CORES DE DESTAQUE (ROXO/MAGENTA DA LOGO) */
-    /* ------------------------------------------------ */
+    /* CORES DE AÇÃO: ELIMINANDO O CIANO */
+    --link-color: #9B59B6; /* Mantém o Roxo para links em texto */
     
-    --secondary-color: #E91E63; /* NOVO MAGENTA VIBRANTE (Destaque Principal, Títulos, Card Popular) */
-    --cta-color: #9C27B0; /* NOVO ROXO VIBRANTE (Botões de Ação Principal) */
-    --cta-hover-color: #7B1FA2; /* Roxo mais escuro para hover */
-    --link-color: var(--secondary-color); /* Links em texto (usando o Magenta) */
-    --accent-color: #D0021B; /* Mantém o Vermelho/Pink para destaques como 'ribbon' (opcional) */
+    /* O CIANO ANTERIOR (#50E3C2) SERÁ SUBSTITUÍDO PELO AZUL VIBRANTE (#4A90E2) */
+    --cta-color: var(--secondary-color); /* Agora usa o Azul Vibrante da logo nos botões */
+    --cta-hover-color: #6aabf7; /* Um azul mais claro para o hover */
     
-    /* Outros */
-    --light-gray: #f4f4f4; 
-    --shadow-color: rgba(0, 0, 0, 0.4); 
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
     --border-radius: 8px;
 }
 
