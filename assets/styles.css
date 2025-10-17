@@ -2,6 +2,10 @@
    ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
 ====================================================== */
 
+/* ======================================================
+   ESTILOS GERAIS - TEMA ESCURO (CORES ORIGINAIS COM AJUSTE CTA)
+====================================================== */
+
 :root {
     --primary-color: #000; /* Preto para fundo */
     --secondary-color: #4A90E2; /* Azul Vibrante/Roxo para links, cabeçalhos de card e destaques (Base da logo) */
@@ -12,7 +16,7 @@
     
     /* CORES DE AÇÃO: ELIMINANDO O CIANO E USANDO AZUL VIBRANTE */
     --link-color: #9B59B6; /* Roxo para links em texto */
-    --cta-color: var(--secondary-color); /* Agora usa o Azul Vibrante da logo nos botões */
+    --cta-color: var(--secondary-color); /* Agora usa o Azul Vibrante (#4A90E2) nos botões */
     --cta-hover-color: #6aabf7; /* Um azul mais claro para o hover */
     
     --shadow-color: rgba(0, 0, 0, 0.4); /* Sombra mais escura */
@@ -96,6 +100,8 @@ h3 { font-size: 1.5em; }
     padding: 5px 0;
     font-weight: 500;
     position: relative;
+    /* Adicionada transição para o estado ativo */
+    transition: color 0.3s, background-color 0.3s, padding 0.3s;
 }
 
 .desktop-nav a:hover {
@@ -103,17 +109,35 @@ h3 { font-size: 1.5em; }
 }
 
 .primary-cta {
-    background-color: var(--cta-color); /* Botão de destaque na nav usa o novo CTA color (Azul) */
+    /* Ajustado para ser mais amplo e arredondado */
+    background-color: var(--cta-color); 
     color: var(--primary-color) !important;
-    padding: 8px 15px;
-    border-radius: var(--border-radius);
+    padding: 10px 18px; /* Aumentado */
+    border-radius: 12px; /* Aumentado */
     transition: background-color 0.3s;
+    font-weight: 600;
 }
 
 .primary-cta:hover {
     background-color: var(--cta-hover-color);
     color: var(--primary-color) !important;
 }
+
+/* NOVO: ESTADO ATIVO DO LINK NA NAVEGAÇÃO (PÁGINA ATUAL) */
+.desktop-nav a.active-link {
+    background-color: var(--cta-color);
+    color: var(--primary-color) !important;
+    padding: 10px 18px; 
+    border-radius: 12px;
+    cursor: default; 
+}
+
+/* Opcional: Garante que o link ativo não use a cor de hover de link normal */
+.desktop-nav a.active-link:hover {
+    color: var(--primary-color) !important;
+    background-color: var(--cta-color); /* Mantém a cor de fundo ativa */
+}
+
 
 /* Botão de Menu Mobile (Escondido no Desktop) */
 .mobile-menu-toggle {
@@ -177,7 +201,7 @@ section {
 
 .cta-main {
     display: inline-block;
-    background-color: var(--cta-color); /* Botão principal usa o novo CTA color (Azul) */
+    background-color: var(--cta-color); /* Botão principal usa o Azul */
     color: var(--primary-color) !important;
     padding: 15px 30px;
     border-radius: 50px;
